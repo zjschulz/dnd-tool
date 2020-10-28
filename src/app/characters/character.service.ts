@@ -1,6 +1,7 @@
 import { Character } from './character.model';
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
+@Injectable()
 export class CharacterService {
     characterSelected = new EventEmitter<Character>();
 

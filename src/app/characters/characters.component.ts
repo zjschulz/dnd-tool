@@ -6,7 +6,7 @@ import { CharacterService } from './character.service';
   selector: 'app-characters',
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.css'],
-  providers: [Character]
+  providers: [CharacterService]
 })
 export class CharactersComponent implements OnInit {
   selectedCharacter: Character;
