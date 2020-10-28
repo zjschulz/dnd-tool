@@ -10,7 +10,8 @@ export class CharacterService {
             "Kalm D'Levistus",
             "Tiefling",
             "Cleric",
-            "Forge Domain"
+            "Forge Domain",
+            "https://pbs.twimg.com/media/D2qurTfUkAIohc7?format=jpg&name=900x900"
         )
     ]
 
