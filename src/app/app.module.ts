@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { CharacterComponent } from './character/character.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    DropdownDirective
+    DropdownDirective,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
