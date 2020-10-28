@@ -4,14 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DropdownDirective } from './shared/dropdown.directive';
-import { CharacterComponent } from './character/character.component';
+import { CharactersComponent } from './characters/characters.component';
+import { CharacterListComponent } from './characters/character-list/character-list.component';
+import { CharacterDetailComponent } from './characters/character-detail/character-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     DropdownDirective,
-    CharacterComponent
+    CharactersComponent,
+    CharacterListComponent,
+    CharacterDetailComponent
   ],
   imports: [
     BrowserModule,
