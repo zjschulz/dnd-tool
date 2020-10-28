@@ -1,13 +1,15 @@
 <div class="row">
-    <div class="col-md-5">
-        <app-character-list></app-character-list>
-    </div>
-    <div class="col-md-7">
-        <app-character-detail
-        *ngIf="selectedCharacter; else infoText"
-        [character]="selectedCharacter"></app-character-detail>
-        <ng-template #infoText>
-            <p>Please select a Character!</p>
-        </ng-template>
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Character</button>
     </div>
 </div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <app-character-item
+        *ngFor="let characterEl of characters"
+        [character]="characterEl"></app-character-item>
+    </div>
+</div>
+
+

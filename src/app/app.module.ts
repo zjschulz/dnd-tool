@@ -7,6 +7,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { CharactersComponent } from './characters/characters.component';
 import { CharacterListComponent } from './characters/character-list/character-list.component';
 import { CharacterDetailComponent } from './characters/character-detail/character-detail.component';
+import { CharacterItemComponent } from './character-item/character-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CharacterDetailComponent } from './characters/character-detail/characte
     DropdownDirective,
     CharactersComponent,
     CharacterListComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    CharacterItemComponent
   ],
   imports: [
     BrowserModule,
