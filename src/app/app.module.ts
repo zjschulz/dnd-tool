@@ -8,6 +8,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { CharacterListComponent } from './characters/character-list/character-list.component';
 import { CharacterDetailComponent } from './characters/character-detail/character-detail.component';
 import { CharacterItemComponent } from './characters/character-list/character-item/character-item.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CharacterItemComponent } from './characters/character-list/character-it
     CharactersComponent,
     CharacterListComponent,
     CharacterDetailComponent,
-    CharacterItemComponent
+    CharacterItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
