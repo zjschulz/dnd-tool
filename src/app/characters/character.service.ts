@@ -7,11 +7,11 @@ export class CharacterService {
 
     private characters: Character[] = [
         new Character(
-            "Kalm D'Levistus",
-            "Tiefling",
+            "Zafnir",
+            "Dwarf",
             "Cleric",
             "Forge Domain",
-            "https://pbs.twimg.com/media/D2qurTfUkAIohc7?format=jpg&name=900x900"
+            "https://vignette.wikia.nocookie.net/emerald-isles/images/5/5b/Dwarf_Cleric.jpg/revision/latest?cb=20181011173034"
         ),
         new Character(
             "Evel",
