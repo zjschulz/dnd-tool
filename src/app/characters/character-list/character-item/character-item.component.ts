@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Character } from '../../character.model';
-import { CharacterService } from '../../character.service';
 
 @Component({
   selector: 'app-character-item',
@@ -9,14 +8,9 @@ import { CharacterService } from '../../character.service';
 })
 export class CharacterItemComponent implements OnInit {
   @Input() character: Character;
+  @Input() index: number;
 
-  constructor(private characterService: CharacterService) { }
-
-  ngOnInit(): void {
-  }
-
-  onSelected() {
-    this.characterService.characterSelected.emit(this.character)
+  ngOnInit() {
   }
 
 }

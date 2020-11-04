@@ -7,7 +7,6 @@ export class CharacterService {
 
     private characters: Character[] = [
         new Character(
-            1,
             "Zafnir",
             "Dwarf",
             "Cleric",
@@ -15,7 +14,6 @@ export class CharacterService {
             "https://vignette.wikia.nocookie.net/emerald-isles/images/5/5b/Dwarf_Cleric.jpg/revision/latest?cb=20181011173034"
         ),
         new Character(
-            2,
             "Evel",
             "Drow",
             "Fighter",
