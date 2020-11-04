@@ -9,6 +9,7 @@ import { CharacterListComponent } from './characters/character-list/character-li
 import { CharacterDetailComponent } from './characters/character-detail/character-detail.component';
 import { CharacterItemComponent } from './characters/character-list/character-item/character-item.component';
 import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
