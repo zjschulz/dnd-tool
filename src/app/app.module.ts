@@ -10,6 +10,8 @@ import { CharacterDetailComponent } from './characters/character-detail/characte
 import { CharacterItemComponent } from './characters/character-list/character-item/character-item.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CharacterEditComponent } from './characters/character-edit/character-edit.component';
+import { CharacterStartComponent } from './characters/character-start/character-start.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AppRoutingModule } from './app-routing.module';
     CharacterListComponent,
     CharacterDetailComponent,
     CharacterItemComponent,
-    HomeComponent
+    HomeComponent,
+    CharacterEditComponent,
+    CharacterStartComponent
   ],
   imports: [
     BrowserModule,
