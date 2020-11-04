@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Character } from '../character.model';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { CharacterService } from '../character.service';
 
 @Component({
   selector: 'app-character-detail',
@@ -7,11 +9,25 @@ import { Character } from '../character.model';
   styleUrls: ['./character-detail.component.css']
 })
 export class CharacterDetailComponent implements OnInit {
-  @Input() character: Character;
+  character: Character;
+  id: number;
 
-  constructor() { }
+  constructor(private characterService: CharacterService,
+              private route: ActivatedRoute,
+              private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.route.params
+    .subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        this.character = this.characterService.getCharacter(this.id);
+      }
+    )
+  }
+
+  onEditCharacter() {
+    this.router.navigate(['edit'], {relativeTo: this.route})
   }
 
 }
