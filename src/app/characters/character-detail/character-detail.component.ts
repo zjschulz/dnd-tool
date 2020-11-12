@@ -30,4 +30,9 @@ export class CharacterDetailComponent implements OnInit {
     this.router.navigate(['edit'], {relativeTo: this.route})
   }
 
+  onDeleteCharacter() {
+    this.characterService.deleteCharacter(this.id);
+    this.router.navigate(['/characters']);
+  }
+
 }

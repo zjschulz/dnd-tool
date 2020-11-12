@@ -43,4 +43,9 @@ export class CharacterService {
         this.charactersChanged.next(this.characters.slice());
     }
 
+    deleteCharacter(index: number) {
+        this.characters.splice(index, 1);
+        this.charactersChanged.next(this.characters.slice());
+    }
+
 }

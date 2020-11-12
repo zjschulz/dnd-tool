@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DropdownDirective } from './shared/dropdown.directive';
@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CharacterEditComponent } from './characters/character-edit/character-edit.component';
 import { CharacterStartComponent } from './characters/character-start/character-start.component';
+import { CharacterService } from './characters/character.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,10 @@ import { CharacterStartComponent } from './characters/character-start/character-
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
