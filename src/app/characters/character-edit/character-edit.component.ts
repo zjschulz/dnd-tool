@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { CharacterService } from '../character.service';
 
@@ -32,6 +32,15 @@ export class CharacterEditComponent implements OnInit {
         characterSubJob = character.subjob;
         characterImagePath = character.imagePath;
       }
+
+      this.characterForm = new FormGroup({
+        'name': new FormControl(characterName, Validators.required),
+        'race': new FormControl(characterRace, Validators.required),
+        'job': new FormControl(characterJob, Validators.required),
+        'subjob': new FormControl(characterSubJob, Validators.required),
+        'imagePath': new FormControl(characterImagePath, Validators.required)
+      });
+
     }
 
   ngOnInit() {
