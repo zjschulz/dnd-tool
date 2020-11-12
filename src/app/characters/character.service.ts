@@ -1,8 +1,10 @@
 import { Character } from './character.model';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class CharacterService {
+    charactersChanged = new Subject<Character[]>();
 
     private characters: Character[] = [
         new Character(
@@ -30,4 +32,10 @@ export class CharacterService {
     getCharacter(index: number) {
         return this.characters[index];
     }
+
+    addCharacter(character: Character) {
+        this.characters.push(character);
+        this.charactersChanged.next(this.characters.slice());
+    }
+
 }
