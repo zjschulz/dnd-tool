@@ -38,4 +38,9 @@ export class CharacterService {
         this.charactersChanged.next(this.characters.slice());
     }
 
+    updateCharacter(index: number, newCharacter: Character) {
+        this.characters[index] = newCharacter;
+        this.charactersChanged.next(this.characters.slice());
+    }
+
 }

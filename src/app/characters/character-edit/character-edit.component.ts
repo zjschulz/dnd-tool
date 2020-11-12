@@ -45,4 +45,18 @@ export class CharacterEditComponent implements OnInit {
       );
   }
 
+  onSubmit() {
+    if (this.editMode) {
+      this.characterService.updateCharacter(this.id, this.characterForm.value)
+    }
+    else {
+      this.characterService.addCharacter(this.characterForm.value)
+    }
+    this.onCancel();
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route})
+  }
+
 }
