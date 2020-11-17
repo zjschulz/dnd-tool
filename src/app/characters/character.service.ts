@@ -6,22 +6,24 @@ import { Subject } from 'rxjs';
 export class CharacterService {
     charactersChanged = new Subject<Character[]>();
 
-    private characters: Character[] = [
-        new Character(
-            "Zafnir",
-            "Dwarf",
-            "Cleric",
-            "Forge Domain",
-            "https://vignette.wikia.nocookie.net/emerald-isles/images/5/5b/Dwarf_Cleric.jpg/revision/latest?cb=20181011173034"
-        ),
-        new Character(
-            "Evel",
-            "Drow",
-            "Fighter",
-            "Eldritch Knight",
-            "https://i.redd.it/k1e9e6x5za401.jpg"
-        )
-    ]
+    private characters: Character[] = []
+
+    // private characters: Character[] = [
+    //     new Character(
+    //         "Zafnir",
+    //         "Dwarf",
+    //         "Cleric",
+    //         "Forge Domain",
+    //         "https://vignette.wikia.nocookie.net/emerald-isles/images/5/5b/Dwarf_Cleric.jpg/revision/latest?cb=20181011173034"
+    //     ),
+    //     new Character(
+    //         "Evel",
+    //         "Drow",
+    //         "Fighter",
+    //         "Eldritch Knight",
+    //         "https://i.redd.it/k1e9e6x5za401.jpg"
+    //     )
+    // ]
 
     constructor() {}
 
@@ -45,6 +47,11 @@ export class CharacterService {
 
     deleteCharacter(index: number) {
         this.characters.splice(index, 1);
+        this.charactersChanged.next(this.characters.slice());
+    }
+
+    setCharacter(characters: Character[]) {
+        this.characters = characters;
         this.charactersChanged.next(this.characters.slice());
     }
 

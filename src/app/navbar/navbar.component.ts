@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,13 +13,17 @@ export class NavbarComponent implements OnInit {
       this.featureSelected.emit(feature)
   }
 
-  constructor() { }
+  constructor(private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
   }
 
-  onSaveData() {}
+  onSaveData() {
+    this.dataStorageService.storeCharacters();
+  }
 
-  onFetchData() {}
+  onFetchData() {
+    this.dataStorageService.fetchCharacters();
+  }
 
 }
