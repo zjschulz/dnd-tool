@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 export class CharacterService {
     charactersChanged = new Subject<Character[]>();
 
-    private characters: Character[] = []
+    private characters: Character[] = [];
 
     // private characters: Character[] = [
     //     new Character(
@@ -26,6 +26,11 @@ export class CharacterService {
     // ]
 
     constructor() {}
+
+    setCharacters(characters: Character[]) {
+        this.characters = characters;
+        this.charactersChanged.next(this.characters.slice());
+    }
 
     getCharacters() {
         return this.characters.slice();
@@ -47,11 +52,6 @@ export class CharacterService {
 
     deleteCharacter(index: number) {
         this.characters.splice(index, 1);
-        this.charactersChanged.next(this.characters.slice());
-    }
-
-    setCharacter(characters: Character[]) {
-        this.characters = characters;
         this.charactersChanged.next(this.characters.slice());
     }
 

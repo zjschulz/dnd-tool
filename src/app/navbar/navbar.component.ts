@@ -8,14 +8,14 @@ import { DataStorageService } from '../shared/data-storage.service';
 export class NavbarComponent implements OnInit {
   collapsed = true;
   @Output() featureSelected = new EventEmitter<string>();
-  
-  onSelect(feature: string) {
-      this.featureSelected.emit(feature)
-  }
 
   constructor(private dataStorageService: DataStorageService) { }
 
-  ngOnInit(): void {
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature)
+  }
+
+  ngOnInit() {
   }
 
   onSaveData() {

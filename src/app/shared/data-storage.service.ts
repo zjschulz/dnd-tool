@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CharacterService } from '../characters/character.service';
 import { Character } from '../characters/character.model';
+import { map } from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
     constructor(private http: HttpClient,
-                private characterService: CharacterService) {}
-
-    // url = "https://dnd-tool-821f3.firebaseio.com/"       
+                private characterService: CharacterService) {}     
 
     storeCharacters() {
         const characters = this.characterService.getCharacters();
@@ -20,10 +19,10 @@ export class DataStorageService {
     }
 
     fetchCharacters() {
-        return this.http
+        this.http
             .get<Character[]>('https://dnd-tool-821f3.firebaseio.com/characters.json')
             .subscribe(characters => {
-                this.characterService.setCharacter(characters)
+                this.characterService.setCharacters(characters)
             })
     }
 }
