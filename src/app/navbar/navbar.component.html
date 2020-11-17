@@ -18,6 +18,12 @@
                 appDropdown>
                     <a style="cursor: pointer;" class="dropdown-toggle" role="button">Profile<span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <li><a
+                            style="cursor: pointer;"
+                            (click)="onSaveData()">Save Date</a></li>
+                        <li><a
+                            style="cursor: pointer;"
+                            (click)="onFetchData()">Fetch Data</a></li>
                         <li><a style="cursor: pointer;">Profile</a></li>
                         <li><a style="cursor: pointer;">Sign Up</a></li>
                         <li><a style="cursor: pointer;">Log In</a></li>
