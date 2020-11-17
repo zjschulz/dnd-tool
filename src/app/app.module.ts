@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CharacterEditComponent } from './characters/character-edit/character-edit.component';
 import { CharacterStartComponent } from './characters/character-start/character-start.component';
 import { CharacterService } from './characters/character.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CharacterService } from './characters/character.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]
