@@ -17,22 +17,22 @@ export class CharacterListComponent implements OnInit, OnDestroy {
               private router: Router,
               private route: ActivatedRoute) { }
 
-    ngOnInit() {
-      this.subscription = this.characterService.charactersChanged
-        .subscribe(
-          (characters: Character[]) => {
-            this.characters = characters;
-          }
-        );
-      this.characters = this.characterService.getCharacters();
-    }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+  ngOnInit() {
+    this.subscription = this.characterService.charactersChanged
+      .subscribe(
+        (characters: Character[]) => {
+          this.characters = characters;
+        }
+      );
+    this.characters = this.characterService.getCharacters();
   }
 
   onNewCharacter() {
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

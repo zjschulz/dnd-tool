@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onFetchData() {
-    this.dataStorageService.fetchCharacters().subscribe();
+    this.dataStorageService.fetchCharacters();
   }
 
 }

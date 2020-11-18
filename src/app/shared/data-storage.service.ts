@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CharacterService } from '../characters/character.service';
 import { Character } from '../characters/character.model';
-import { tap } from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
@@ -19,13 +18,10 @@ export class DataStorageService {
     }
 
     fetchCharacters() {
-        return this.http
+        this.http
             .get<Character[]>('https://dnd-tool-821f3.firebaseio.com/characters.json')
-            .pipe(
-                tap(characters => {
-                    this.characterService.setCharacters(characters)
-                })
-            )
-
+            .subscribe(characters => {
+              this.characterService.setCharacters(characters);
+            });
     }
 }

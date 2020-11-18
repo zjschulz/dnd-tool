@@ -12,13 +12,12 @@ export class CharactersResolverService implements Resolve<Character[]> {
 
         resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
             const characters = this.charactersService.getCharacters();
-
-        if (characters.length === 0) {
-            return this.dataStorageService.fetchCharacters();
-        }
-        else {
-            return characters;
-        }
+            if (characters.length === 0) {
+                return this.dataStorageService.fetchCharacters();
+            }
+            else {
+                return characters;
+            }
         }
 
 }
