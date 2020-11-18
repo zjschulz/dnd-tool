@@ -28,6 +28,7 @@ export class CharacterService {
     constructor() {}
 
     setCharacters(characters: Character[]) {
+        debugger;
         this.characters = characters;
         this.charactersChanged.next(this.characters.slice());
     }
