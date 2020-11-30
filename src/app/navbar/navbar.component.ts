@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
@@ -7,7 +7,7 @@ import { AuthService } from '../auth/auth.service';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html'
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   collapsed = true;
   isAuthenticated = false;
   @Output() featureSelected = new EventEmitter<string>();

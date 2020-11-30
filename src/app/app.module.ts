@@ -15,6 +15,8 @@ import { CharacterStartComponent } from './characters/character-start/character-
 import { CharacterService } from './characters/character.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     CharacterItemComponent,
     HomeComponent,
     CharacterEditComponent,
-    CharacterStartComponent
+    CharacterStartComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

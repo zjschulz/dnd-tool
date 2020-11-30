@@ -6,6 +6,7 @@ import { CharacterEditComponent } from './characters/character-edit/character-ed
 import { CharacterStartComponent } from './characters/character-start/character-start.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/characters', pathMatch: 'full'},
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
         { path: ':id', component: CharacterDetailComponent },
         { path: ':id/edit', component: CharacterEditComponent }
     ] },
-    { path: 'home', component: HomeComponent }
+    { path: 'home', component: HomeComponent },
+    { path: 'auth', component: AuthComponent }
 ];
 
 @NgModule({
