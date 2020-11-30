@@ -13,7 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CharacterEditComponent } from './characters/character-edit/character-edit.component';
 import { CharacterStartComponent } from './characters/character-start/character-start.component';
 import { CharacterService } from './characters/character.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CharacterService],
+  providers: [
+    CharacterService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
