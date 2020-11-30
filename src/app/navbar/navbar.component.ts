@@ -34,4 +34,12 @@ export class NavbarComponent implements OnInit {
     this.dataStorageService.fetchCharacters().subscribe();
   }
 
+  onLogout() {
+    this.authService.logout();
+  }
+
+  ngOnDestroy() {
+      this.userSub.unsubscribe();
+  }
+
 }
