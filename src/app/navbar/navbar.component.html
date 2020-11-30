@@ -8,15 +8,27 @@
         </div>
         <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-                <li routerLinkActive="active"><a routerLink="/characters">Characters</a></li>
-                <!-- <li><a href="#">List Item</a></li> -->
+                <li routerLinkActive="active">
+                    <a routerLink="/home">Home</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a routerLink="/characters" *ngIf="isAuthenticated">Characters</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a routerLink="/auth" *ngIf="!isAuthenticated">Authenticate</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="isAuthenticated">
+                    <a
+                    style="cursor: pointer;"
+                    (click)="onLogout()">Logout</a>
+                </li>
                 <li
                 class="dropdown"
-                appDropdown>
-                    <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage<span class="caret"></span></a>
+                appDropdown
+                *ngIf="isAuthenticated">
+                    <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a
                             style="cursor: pointer;"
@@ -24,10 +36,6 @@
                         <li><a
                             style="cursor: pointer;"
                             (click)="onFetchData()">Fetch Data</a></li>
-                        <!-- <li><a style="cursor: pointer;">Profile</a></li>
-                        <li><a style="cursor: pointer;">Sign Up</a></li>
-                        <li><a style="cursor: pointer;">Log In</a></li>
-                        <li><a style="cursor: pointer;">Log Out</a></li> -->
                     </ul>
                 </li>
             </ul>
