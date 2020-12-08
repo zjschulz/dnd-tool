@@ -8,7 +8,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
 
 const routes: Routes = [
     { 
-        path: 'characters',
+        path: '',
         component: CharactersComponent,
         canActivate: [AuthGuard],
         children: [

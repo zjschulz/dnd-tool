@@ -8,6 +8,7 @@ import { CharacterEditComponent } from './character-edit/character-edit.componen
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { CharactersRoutingModule } from './characters-routing.module';
 
 @NgModule({
     declarations: [
@@ -21,8 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     imports: [
         RouterModule,
         ReactiveFormsModule,
+        CharactersRoutingModule,
         SharedModule
-        // add CharactersRoutingModule
     ],
     exports: [
         CharactersComponent,
