@@ -8,9 +8,9 @@
         </div>
         <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active">
+                <!-- <li routerLinkActive="active">
                     <a routerLink="/home">Home</a>
-                </li>
+                </li> -->
                 <li routerLinkActive="active">
                     <a routerLink="/characters" *ngIf="isAuthenticated">Characters</a>
                 </li>
