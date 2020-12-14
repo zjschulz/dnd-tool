@@ -17,32 +17,71 @@
         {{ character.race }}, {{ character.subjob }} {{ character.job }}
     </div>
 </div>
+<!-- MANAGE BUTTON -->
+<div class="row">
+    <div class="col-xs-12">
+        <div
+        class="btn-group"
+        appDropdown>
+            <button type="button" class="btn btn-primary dropdown-toggle">Manage Character <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a style="cursor: pointer;" (click)="onEditCharacter()">Edit Character</a></li>
+                <li><a style="cursor: pointer;" (click)="onDeleteCharacter()">Delete Character</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- IMPORTANT INFO -->
+<h4>Important Info</h4>
+<div class="row">
+    <div class="col-xs-4">
+        HP: 20
+    </div>
+    <div class="col-xs-4">
+        Proficieny Bonus: +2
+    </div>
+    <div class="col-xs-4">
+        Level: 5
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-4">
+        AC: 15
+    </div>
+    <div class="col-xs-4">
+        Spell DC: 10
+    </div>
+    <div class="col-xs-4">
+        Initiative: +3
+    </div>
+</div>
 <!-- STAT ROWS -->
 <h4>Ability Scores</h4>
 <div class="row">
     <div class="col-xs-4">
-        STR: 10
+        STR: 10 (+0)
     </div>
     <div class="col-xs-4">
-        DEX: 10
+        DEX: 10 (+0)
     </div>
     <div class="col-xs-4">
-        CON: 10
+        CON: 10 (+0)
     </div>
 </div>
 <div class="row">
     <div class="col-xs-4">
-        INT: 10
+        INT: 10 (+0)
     </div>
     <div class="col-xs-4">
-        WIS: 10
+        WIS: 10 (+0)
     </div>
     <div class="col-xs-4">
-        CHA: 10
+        CHA: 10 (+0)
     </div>
 </div>
 <!-- SAVING THROWS -->
 <h4>Saving Throws</h4>
+<!-- score equals ability mod + prof bonus if prof -->
 <div class="row">
     <div class="col-xs-6">
         STR: +5
@@ -82,19 +121,5 @@
 <div class="row">
     <div class="col-xs-12">
         Passive WIS(Insight): 10
-    </div>
-</div>
-<!-- MANAGE BUTTON -->
-<div class="row">
-    <div class="col-xs-12">
-        <div
-        class="btn-group"
-        appDropdown>
-            <button type="button" class="btn btn-primary dropdown-toggle">Manage Character <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a style="cursor: pointer;" (click)="onEditCharacter()">Edit Character</a></li>
-                <li><a style="cursor: pointer;" (click)="onDeleteCharacter()">Delete Character</a></li>
-            </ul>
-        </div>
     </div>
 </div>
