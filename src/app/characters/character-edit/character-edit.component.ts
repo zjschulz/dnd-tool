@@ -41,7 +41,7 @@ export class CharacterEditComponent implements OnInit {
           characterItems.push(
             new FormGroup({
               'name': new FormControl(item.name, Validators.required),
-              'amount': new FormControl(item.weight, [
+              'weight': new FormControl(item.weight, [
                 Validators.required,
                 Validators.pattern(/^[1-9]+[0-9]*$/)
               ])
