@@ -36,7 +36,7 @@ export class CharacterEditComponent implements OnInit {
       characterJob = character.job;
       characterSubJob = character.subjob;
       characterImagePath = character.imagePath;
-      if (character['ingredients']) {
+      if (character['items']) {
         for (let item of character.items) {
           characterItems.push(
             new FormGroup({
@@ -91,7 +91,7 @@ export class CharacterEditComponent implements OnInit {
     (<FormArray>this.characterForm.get('items')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required),
-        'amount': new FormControl(null, [
+        'weight': new FormControl(null, [
           Validators.required,
           Validators.pattern(/^[1-9]+[0-9]*$/)
         ])
