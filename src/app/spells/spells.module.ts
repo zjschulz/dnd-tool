@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
+import { SpellsComponent } from './spells.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-    declarations: [],
+    declarations: [
+        SpellsComponent
+    ],
     imports: [],
-    exports: []
+    exports: [
+        SpellsComponent
+    ]
 })
 export class SpellsModule {}
