@@ -12,10 +12,10 @@
                     <a routerLink="/characters" *ngIf="isAuthenticated">Characters</a>
                 </li>
                 <li routerLinkActive="active">
-                    <a routerLink="/spells">Spells</a>
+                    <a routerLink="/auth" *ngIf="!isAuthenticated">Authenticate</a>
                 </li>
                 <li routerLinkActive="active">
-                    <a routerLink="/auth" *ngIf="!isAuthenticated">Authenticate</a>
+                    <a routerLink="/spells">Spells</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
