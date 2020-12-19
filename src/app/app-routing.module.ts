@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { SpellsComponent } from './spells/spells.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const appRoutes: Routes = [
     { 
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-    }
+    },
+    { path: 'spells', component: SpellsComponent }
 ];
 
 @NgModule({
