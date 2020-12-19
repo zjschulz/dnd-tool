@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-character-start',
-  templateUrl: './character-start.component.html',
-  styleUrls: ['./character-start.component.css']
+  selector: 'app-spell-start',
+  templateUrl: './spell-start.component.html',
+  styleUrls: ['./spell-start.component.css']
 })
-export class CharacterStartComponent implements OnInit {
+export class SpellStartComponent implements OnInit {
 
   constructor() { }
 
