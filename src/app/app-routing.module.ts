@@ -14,7 +14,10 @@ const appRoutes: Routes = [
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
     },
-    { path: 'spells', component: SpellsComponent }
+    {  
+        path: 'spells',
+        loadChildren: () => import('./spells/spells.module').then(m => m.SpellsModule)
+    }
 ];
 
 @NgModule({
