@@ -20,7 +20,7 @@ export class SpellsComponent implements OnInit {
     return this.http.get(
       'https://www.dnd5eapi.co/api/spells'
     )
-    .subscribe(res => console.log(res.results))
+    .subscribe(res => console.log(res))
     // get list of spell index's
     // create list component and have this fetch request populate the list
     // create detail component that fetch spell data on clicked spell in list
