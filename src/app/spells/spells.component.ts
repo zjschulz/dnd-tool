@@ -17,7 +17,7 @@ export class SpellsComponent implements OnInit {
   }
 
   onFetchSpells() {
-    return this.http.get(
+    return this.http.get<Spell[]>(
       'https://www.dnd5eapi.co/api/spells'
     )
     .subscribe(res => console.log(res))
