@@ -5,6 +5,7 @@ import { SpellItemComponent } from './spell-list/spell-item/spell-item.component
 import { SpellStartComponent } from './spell-start/spell-start.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { SpellsRoutingModule } from './spells-routing.module';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     ],
     imports: [
         RouterModule,
+        SpellsRoutingModule,
         SharedModule
     ],
     exports: [

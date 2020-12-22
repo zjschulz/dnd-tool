@@ -10,7 +10,9 @@ export class SpellsComponent implements OnInit {
 
   constructor(private dataStorageService: DataStorageService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   onFetchSpells() {
     this.dataStorageService.fetchSpells().subscribe();
