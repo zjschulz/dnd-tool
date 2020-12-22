@@ -3,11 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { CharacterService } from '../characters/character.service';
 import { Character } from '../characters/character.model';
 import { map, tap } from 'rxjs/operators';
+import { SpellService } from '../spells/spell.service';
+import { Spell } from '../spells/spell.model';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
     constructor(private http: HttpClient,
-                private characterService: CharacterService) {}     
+                private characterService: CharacterService,
+                private spellService: SpellService) {}     
 
     storeCharacters() {
         const characters = this.characterService.getCharacters();
@@ -31,5 +34,20 @@ export class DataStorageService {
                     this.characterService.setCharacters(characters);
                 })
             )
+    }
+
+    fetchSpells() {
+        return this.http
+        .get<Spell[]>('https://www.dnd5eapi.co/api/spells')
+        .pipe(
+            map(spells => {
+                return spells.results.map(spell => {
+                    return {...spell};
+                });
+            }),
+            tap(spells => {
+                this.spellService.setSpells(spells);
+            })
+        );
     }
 }

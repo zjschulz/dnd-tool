@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Spell } from './spell.model';
-import { map } from 'rxjs/operators';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-spells',
@@ -10,20 +8,12 @@ import { map } from 'rxjs/operators';
 })
 export class SpellsComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private dataStorageService: DataStorageService) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onFetchSpells() {
-    return this.http.get<Spell[]>(
-      'https://www.dnd5eapi.co/api/spells'
-    )
-    .subscribe(res => console.log(res))
-    // get list of spell index's
-    // create list component and have this fetch request populate the list
-    // create detail component that fetch spell data on clicked spell in list
+    this.dataStorageService.fetchSpells().subscribe();
   }
 
 }
