@@ -38,7 +38,7 @@ export class DataStorageService {
 
     fetchSpells() {
         return this.http
-        .get<Spell[]>('https://www.dnd5eapi.co/api/spells')
+        .get('https://www.dnd5eapi.co/api/spells')
         .pipe(
             map(spells => {
                 return spells.results.map(spell => {
@@ -49,5 +49,11 @@ export class DataStorageService {
                 this.spellService.setSpells(spells);
             })
         );
+    }
+
+    fetchSpell(url) {
+        return this.http
+        .get('https://www.dnd5eapi.co' + url)
+        .subscribe((res) => console.log(res))
     }
 }
