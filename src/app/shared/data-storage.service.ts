@@ -5,13 +5,14 @@ import { Character } from '../characters/character.model';
 import { map, tap } from 'rxjs/operators';
 import { SpellService } from '../spells/spell.service';
 import { Spell } from '../spells/spell.model';
+import { SpellDetailComponent } from '../spells/spell-detail/spell-detail.component';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
     constructor(private http: HttpClient,
                 private characterService: CharacterService,
                 private spellService: SpellService) {}     
-
+ 
     storeCharacters() {
         const characters = this.characterService.getCharacters();
         this.http
@@ -54,6 +55,5 @@ export class DataStorageService {
     fetchSpell(url) {
         return this.http
         .get('https://www.dnd5eapi.co' + url)
-        .subscribe((res) => this.spellService.setData(res))
     }
 }
