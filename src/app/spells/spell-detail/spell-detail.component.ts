@@ -11,7 +11,7 @@ import { DataStorageService } from 'src/app/shared/data-storage.service';
 })
 export class SpellDetailComponent implements OnInit {
   spell: Spell;
-  private data:any = [];
+  data: any;
   id: number;
 
   constructor(private spellService: SpellService,
@@ -20,11 +20,11 @@ export class SpellDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-    .subscribe(
+    .subscribe( 
       (params: Params) => {
         this.id = +params['id'];
         this.spell = this.spellService.getSpell(this.id);
-        this.data = this.dataStorageService.fetchSpell(this.spell.url);
+        this.dataStorageService.fetchSpell(this.spell.url);
       }
     )
   }

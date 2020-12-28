@@ -54,6 +54,6 @@ export class DataStorageService {
     fetchSpell(url) {
         return this.http
         .get('https://www.dnd5eapi.co' + url)
-        .subscribe((res) => console.log(res))
+        .subscribe((res) => this.spellService.setData(res))
     }
 }

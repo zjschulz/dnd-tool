@@ -7,8 +7,17 @@ export class SpellService {
     spellsChanged = new Subject<Spell[]>();
 
     private spells: Spell[] = [];
+    private data: any;
 
     constructor() {}
+
+    setData(data) {
+        this.data = data;
+    }
+
+    getData() {
+        return this.data;
+    }
 
     setSpells(spells: Spell[]) {
         this.spells = spells;
