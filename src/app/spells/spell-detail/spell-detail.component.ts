@@ -25,7 +25,10 @@ export class SpellDetailComponent implements OnInit {
         this.id = +params['id'];
         this.spell = this.spellService.getSpell(this.id);
         this.dataStorageService.fetchSpell(this.spell.url)
-        .subscribe((res) => {this.data = res});
+        .subscribe((res) => {
+          this.data = res;
+          console.log(res)
+        });
       }
     )
   }

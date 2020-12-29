@@ -1,7 +1,19 @@
 <div class="row">
     <div class="col-xs-12">
-        <h1>{{ spell.name }}</h1>
-        <h2>{{ spell.url }}</h2>
-        <h3>{{ data.desc[0] }}</h3>
+        <h1>{{ data.name }}</h1>
+        <div>{{ data.level }} Level {{ data.school.name }}</div>
+        <hr>
+        <div>Casting Time {{ data.casting_time }}</div>
+        <div>Range/Area {{ data.range }}
+            <div *ngIf="this.data.area_of_effect">
+                /{{ data.area_of_effect.size }} {{ data.area_of_effect.type }}
+            </div>
+        </div>
+        <div>Components {{ data.components[0] }}</div>
+        <div>Duration {{ data.duration }}</div>
+        <hr>
+        <div>{{ data.desc[0] }}</div>
+        <hr>
+        <div>Classes {{ data.classes[0].name }}</div>
     </div>
 </div>
