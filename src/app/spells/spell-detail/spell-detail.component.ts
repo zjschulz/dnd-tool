@@ -33,7 +33,7 @@ export class SpellDetailComponent implements OnInit {
           this.desc = res.desc;
           this.components = res.components;
           this.classes = res.classes;
-          console.log(res)
+          // console.log(res)
         });
       }
     )

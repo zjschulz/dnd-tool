@@ -13,7 +13,7 @@ export class DataStorageService {
                 private characterService: CharacterService,
                 private spellService: SpellService) {}     
  
-    storeCharacters() {
+    storeCharacters() { 
         const characters = this.characterService.getCharacters();
         this.http
             .put('https://dnd-tool-821f3.firebaseio.com/characters.json', characters)

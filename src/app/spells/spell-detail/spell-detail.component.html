@@ -12,7 +12,7 @@
         <div>Components {{ components }}</div>
         <div>Duration {{ data.duration }}</div>
         <hr>
-        <p>{{ desc }}</p>
+        <p *ngFor="let para of desc">{{ para }}</p>
         <p>{{ data.higher_level }}</p>
         <hr>
         <div>Classes <div *ngFor="let class of classes">{{ class.name }}</div></div>
