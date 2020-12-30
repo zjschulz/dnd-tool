@@ -5,15 +5,16 @@
         <hr>
         <div>Casting Time {{ data.casting_time }}</div>
         <div>Range/Area {{ data.range }}
-            <div *ngIf="this.data.area_of_effect">
+            <!-- <div *ngIf="this.data.area_of_effect">
                 /{{ data.area_of_effect.size }} {{ data.area_of_effect.type }}
-            </div>
+            </div> -->
         </div>
-        <div>Components {{ components.value }}</div>
+        <div>Components {{ components }}</div>
         <div>Duration {{ data.duration }}</div>
         <hr>
-        <div>{{ data.desc[0] }}</div>
+        <p>{{ desc }}</p>
+        <p>{{ data.higher_level }}</p>
         <hr>
-        <div>Classes {{ data.classes[0].name }}</div>
+        <div>Classes <div *ngFor="let class of classes">{{ class.name }}</div></div>
     </div>
 </div>

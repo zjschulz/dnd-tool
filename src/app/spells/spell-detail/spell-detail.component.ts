@@ -13,6 +13,9 @@ export class SpellDetailComponent implements OnInit {
   spell: Spell;
   id: number;
   data: any;
+  components: [];
+  desc: [];
+  classes: [];
 
   constructor(private spellService: SpellService,
               private route: ActivatedRoute,
@@ -27,6 +30,9 @@ export class SpellDetailComponent implements OnInit {
         this.dataStorageService.fetchSpell(this.spell.url)
         .subscribe((res) => {
           this.data = res;
+          this.desc = res.desc;
+          this.components = res.components;
+          this.classes = res.classes;
           console.log(res)
         });
       }

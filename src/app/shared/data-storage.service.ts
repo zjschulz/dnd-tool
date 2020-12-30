@@ -54,6 +54,6 @@ export class DataStorageService {
 
     fetchSpell(url) {
         return this.http
-        .get('https://www.dnd5eapi.co' + url)
+        .get('https://www.dnd5eapi.co' + url) 
     }
 }
