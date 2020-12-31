@@ -1,7 +1,6 @@
 import { Character } from './character.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Item } from '../shared/item.model';
 
 @Injectable()
 export class CharacterService {

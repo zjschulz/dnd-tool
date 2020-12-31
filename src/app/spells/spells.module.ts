@@ -7,26 +7,28 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { SpellsRoutingModule } from './spells-routing.module';
 import { SpellDetailComponent } from './spell-detail/spell-detail.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
         SpellsComponent,
         SpellStartComponent,
         SpellListComponent,
-        SpellItemComponent,
-        SpellDetailComponent
+        SpellDetailComponent,
+        SpellItemComponent
     ],
     imports: [
         RouterModule,
         SpellsRoutingModule,
-        SharedModule
+        SharedModule,
+        CommonModule
     ],
     exports: [
         SpellsComponent,
         SpellStartComponent,
         SpellListComponent,
-        SpellItemComponent,
-        SpellDetailComponent
+        SpellDetailComponent,
+        SpellItemComponent
     ]
 })
 export class SpellsModule {}

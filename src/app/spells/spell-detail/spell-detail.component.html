@@ -1,13 +1,16 @@
 <div class="row">
     <div class="col-xs-12">
-        <h1>{{ data.name }}</h1>
+        <h1>{{ data.name }}
+            <strong *ngIf="this.data.concentration">C</strong>
+            <strong *ngIf="this.data.ritual">R</strong>
+        </h1>
         <div>{{ data.level }} Level {{ data.school.name }}</div>
         <hr>
         <div>Casting Time {{ data.casting_time }}</div>
         <div>Range/Area {{ data.range }}
-            <!-- <div *ngIf="this.data.area_of_effect">
-                /{{ data.area_of_effect.size }} {{ data.area_of_effect.type }}
-            </div> -->
+            <i *ngIf="this.data.area_of_effect">
+            / {{ data.area_of_effect.size }}ft {{ data.area_of_effect.type }}
+            </i>
         </div>
         <div>Components {{ components }}</div>
         <div>Duration {{ data.duration }}</div>
@@ -15,6 +18,6 @@
         <p *ngFor="let para of desc">{{ para }}</p>
         <p>{{ data.higher_level }}</p>
         <hr>
-        <div>Classes <div *ngFor="let class of classes">{{ class.name }}</div></div>
+        <div>Classes <i *ngFor="let class of classes">{{ class.name }} </i></div>
     </div>
 </div>
