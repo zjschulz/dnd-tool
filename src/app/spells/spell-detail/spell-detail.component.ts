@@ -28,12 +28,11 @@ export class SpellDetailComponent implements OnInit {
         this.id = +params['id'];
         this.spell = this.spellService.getSpell(this.id);
         this.dataStorageService.fetchSpell(this.spell.url)
-        .subscribe((res) => {
+        .subscribe((res: any) => {
           this.data = res;
           this.desc = res.desc;
           this.components = res.components;
           this.classes = res.classes;
-          // console.log(res)
         });
       }
     )

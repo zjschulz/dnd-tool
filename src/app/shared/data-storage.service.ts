@@ -4,8 +4,6 @@ import { CharacterService } from '../characters/character.service';
 import { Character } from '../characters/character.model';
 import { map, tap } from 'rxjs/operators';
 import { SpellService } from '../spells/spell.service';
-import { Spell } from '../spells/spell.model';
-import { SpellDetailComponent } from '../spells/spell-detail/spell-detail.component';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
@@ -41,19 +39,19 @@ export class DataStorageService {
         return this.http
         .get('https://www.dnd5eapi.co/api/spells')
         .pipe(
-            map(spells => {
+            map((spells: any) => {
                 return spells.results.map(spell => {
                     return {...spell};
                 });
             }),
             tap(spells => {
-                this.spellService.setSpells(spells);
-            })
+                this.spellService.setSpells(spells); 
+            }) 
         );
     }
 
     fetchSpell(url) {
         return this.http
-        .get('https://www.dnd5eapi.co' + url) 
+        .get('https://www.dnd5eapi.co' + url)
     }
 }
