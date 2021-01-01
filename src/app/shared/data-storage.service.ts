@@ -54,4 +54,20 @@ export class DataStorageService {
         return this.http
         .get('https://www.dnd5eapi.co' + url)
     }
+
+    fetchRaces() {
+        return this.http
+        .get('https://www.dnd5eapi.co/api/races')
+        .pipe(
+            map((races: any) => {
+                return races.results.map(race => {
+                    return {...race};
+                });
+            }),
+            tap(races => {
+                this.raceService.setRaces(races); 
+            }) 
+        );
+    }
+
 }
