@@ -60,6 +60,7 @@ export class DataStorageService {
         .get('https://www.dnd5eapi.co/api/races')
         .pipe(
             map((races: any) => {
+                console.log(races);
                 return races.results.map(race => {
                     return {...race};
                 });
