@@ -4,12 +4,14 @@ import { CharacterService } from '../characters/character.service';
 import { Character } from '../characters/character.model';
 import { map, tap } from 'rxjs/operators';
 import { SpellService } from '../spells/spell.service';
+import { RaceService } from '../races/race.service';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
     constructor(private http: HttpClient,
                 private characterService: CharacterService,
-                private spellService: SpellService) {}     
+                private spellService: SpellService,
+                private raceService: RaceService) {}     
  
     storeCharacters() { 
         const characters = this.characterService.getCharacters();
