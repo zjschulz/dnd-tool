@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { RacesComponent } from './races.component';
+import { RacesRoutingModule } from './races-routing.module';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,7 @@ import { RacesComponent } from './races.component';
     ],
     imports: [
         RouterModule,
-        // RacesRoutingModule,
+        RacesRoutingModule,
         SharedModule,
         CommonModule
     ],
