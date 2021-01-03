@@ -16,6 +16,10 @@ const appRoutes: Routes = [
     {
         path: 'spells',
         loadChildren: () => import('./spells/spells.module').then(m => m.SpellsModule)
+    },
+    {
+        path: 'races',
+        loadChildren: () => import('./races/races.module').then(m => m.RacesModule)
     }
 ];
 
