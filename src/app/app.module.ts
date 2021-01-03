@@ -18,8 +18,7 @@ import { SpellsModule } from './spells/spells.module';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    CoreModule,
-    SpellsModule
+    CoreModule
   ],
   bootstrap: [AppComponent]
 })
