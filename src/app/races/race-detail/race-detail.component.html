@@ -1,3 +1,16 @@
 <div class="row">
     <h1>{{ data.name }}</h1>
+    <hr>
+    <h2>Age</h2>
+    {{ data.age }}
+    <h2>Alignment</h2>
+    {{ data.alignment }}
+    <h2>Size</h2>
+    {{ data.size_description }}
+    <h2>Speed</h2>
+    Your base walking speed is {{ data.speed }} feet.
+    <h2>Languages</h2>
+    {{ data.language_desc }}
+    <h2>Traits</h2>
+    <p *ngFor="let trait of traits">{{ trait.name }}</p>
 </div>

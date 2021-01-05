@@ -13,6 +13,7 @@ export class RaceDetailComponent implements OnInit {
   race: Race;
   id: number;
   data: any;
+  traits: [];
 
   constructor(private raceService: RaceService,
               private route: ActivatedRoute,
@@ -24,10 +25,11 @@ export class RaceDetailComponent implements OnInit {
       (params: Params) => {
         this.id = +params['id'];
         this.race = this.raceService.getRace(this.id);
-        this.dataStorageService.fetchSpell(this.race.url)
+        this.dataStorageService.fetchRace(this.race.url)
         .subscribe((res: any) => {
           console.log(res);
           this.data = res;
+          this.traits = res.traits;
         });
       }
     )

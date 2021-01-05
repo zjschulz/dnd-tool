@@ -7,13 +7,14 @@ import { RacesRoutingModule } from './races-routing.module';
 import { RaceStartComponent } from './race-start/race-start.component';
 import { RaceListComponent } from './race-list/race-list.component';
 import { RaceItemComponent } from './race-list/race-item/race-item.component';
+import { RaceDetailComponent } from './race-detail/race-detail.component';
 
 @NgModule({
     declarations: [
         RacesComponent,
         RaceStartComponent,
         RaceListComponent,
-        // RaceDetailComponent,
+        RaceDetailComponent,
         RaceItemComponent
     ],
     imports: [
@@ -26,7 +27,7 @@ import { RaceItemComponent } from './race-list/race-item/race-item.component';
         RacesComponent,
         RaceStartComponent,
         RaceListComponent,
-        // RaceDetailComponent,
+        RaceDetailComponent,
         RaceItemComponent
     ]
 })

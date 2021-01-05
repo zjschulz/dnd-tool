@@ -73,4 +73,9 @@ export class DataStorageService {
         );
     }
 
+    fetchRace(url) {
+        return this.http
+        .get('https://www.dnd5eapi.co' + url)
+    }
+
 }
