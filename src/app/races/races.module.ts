@@ -4,14 +4,17 @@ import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { RacesComponent } from './races.component';
 import { RacesRoutingModule } from './races-routing.module';
+import { RaceStartComponent } from './race-start/race-start.component';
+import { RaceListComponent } from './race-list/race-list.component';
+import { RaceItemComponent } from './race-list/race-item/race-item.component';
 
 @NgModule({
     declarations: [
-        RacesComponent
-        // RaceStartComponent,
-        // RaceListComponent,
+        RacesComponent,
+        RaceStartComponent,
+        RaceListComponent,
         // RaceDetailComponent,
-        // RaceItemComponent
+        RaceItemComponent
     ],
     imports: [
         RouterModule,
@@ -20,11 +23,11 @@ import { RacesRoutingModule } from './races-routing.module';
         CommonModule
     ],
     exports: [
-        RacesComponent
-        // RaceStartComponent,
-        // RaceListComponent,
+        RacesComponent,
+        RaceStartComponent,
+        RaceListComponent,
         // RaceDetailComponent,
-        // RaceItemComponent
+        RaceItemComponent
     ]
 })
 export class RacesModule {}

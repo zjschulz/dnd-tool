@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RacesComponent } from './races.component';
+import { RaceStartComponent } from './race-start/race-start.component';
 
 const routes: Routes = [
     { 
         path: '',
-        component: RacesComponent
-        // children: [
-        // { path: '', component: RaceStartComponent },
+        component: RacesComponent,
+        children: [
+        { path: '', component: RaceStartComponent }
         // { path: ':id', component: RaceDetailComponent }
-    // ] 
+    ] 
     }
 ]
 
