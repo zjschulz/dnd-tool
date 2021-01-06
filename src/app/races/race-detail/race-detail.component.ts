@@ -14,6 +14,7 @@ export class RaceDetailComponent implements OnInit {
   id: number;
   data: any;
   traits: [];
+  bonuses: [];
 
   constructor(private raceService: RaceService,
               private route: ActivatedRoute,
@@ -27,10 +28,12 @@ export class RaceDetailComponent implements OnInit {
         this.race = this.raceService.getRace(this.id);
         this.dataStorageService.fetchRace(this.race.url)
         .subscribe((res: any) => {
-          console.log(res);
+          // console.log(res);
           this.data = res;
           this.traits = res.traits;
+          this.bonuses = res.ability_bonuses;
         });
+        debugger
       }
     )
   }
