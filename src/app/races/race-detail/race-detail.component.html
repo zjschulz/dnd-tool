@@ -13,6 +13,13 @@
     {{ data.language_desc }}
     <h2>Ability Scores</h2>
     <p *ngFor="let bonus of bonuses">{{ bonus.ability_score.name }}: +{{ bonus.bonus }}</p>
+    <h2>Proficiencies</h2>
+    <p *ngFor="let prof of proficiencies">{{ prof.name }}</p>
+    <div *ngIf="data.starting_proficiency_options">
+    <h4>Optional Proficiencies</h4>
+    <p>Choose {{ data.starting_proficiency_options.choose }}</p>
+    <p *ngFor="let option of proficiency_options">{{ option.name }}</p>
+    </div>
     <h2>Traits</h2>
     <p *ngFor="let trait of traits">{{ trait.name }}</p>
     <!-- <p *ngIf="this.traits === []">No Additional Traits</p> -->

@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Race } from '../race.model';
@@ -15,10 +15,14 @@ export class RaceDetailComponent implements OnInit {
   data: any;
   traits: [];
   bonuses: [];
+  proficiencies: [];
+  proficiency_options: [];
 
   constructor(private raceService: RaceService,
               private route: ActivatedRoute,
               private dataStorageService: DataStorageService) { }
+
+// Need to populate html with sections that have no data ie proficiencies/traits
 
   ngOnInit() {
     this.route.params
@@ -32,6 +36,10 @@ export class RaceDetailComponent implements OnInit {
           this.data = res;
           this.traits = res.traits;
           this.bonuses = res.ability_bonuses;
+          this.proficiencies = res.starting_proficiencies;
+          if (res.starting_proficiency_options) {
+            this.proficiency_options = res.starting_proficiency_options.from;
+          }
         });
       }
     )
