@@ -52,7 +52,7 @@ export class DataStorageService {
         );
     }
 
-    fetchSpell(url) {
+    fetchUrl(url) {
         return this.http
         .get('https://www.dnd5eapi.co' + url)
     }
@@ -71,11 +71,6 @@ export class DataStorageService {
                 this.raceService.setRaces(races); 
             }) 
         );
-    }
-
-    fetchRace(url) {
-        return this.http
-        .get('https://www.dnd5eapi.co' + url)
     }
 
 }
