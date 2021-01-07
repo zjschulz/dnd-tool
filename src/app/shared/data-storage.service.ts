@@ -59,7 +59,7 @@ export class DataStorageService {
         .get('https://www.dnd5eapi.co' + url)
     }
 
-    fetchMonsters() {
+    fetchRaces() {
         return this.http
         .get('https://www.dnd5eapi.co/api/races')
         .pipe(
@@ -75,7 +75,7 @@ export class DataStorageService {
         );
     }
 
-    fetchRaces() {
+    fetchMonsters() {
         return this.http
         .get('https://www.dnd5eapi.co/api/monsters')
         .pipe(
