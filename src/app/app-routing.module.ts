@@ -20,6 +20,10 @@ const appRoutes: Routes = [
     {
         path: 'races',
         loadChildren: () => import('./races/races.module').then(m => m.RacesModule)
+    },
+    {
+        path: 'monsters',
+        loadChildren: () => import('./monsters/monsters.module').then(m => m.MonstersModule)
     }
 ];
 
