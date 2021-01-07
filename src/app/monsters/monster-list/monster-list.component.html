@@ -1,0 +1,10 @@
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <app-monster-item
+        *ngFor="let monsterEl of monsters; let i = index"
+        [monster]="monsterEl"
+        [index]="i"></app-monster-item>
+    </div>
+</div>
+
