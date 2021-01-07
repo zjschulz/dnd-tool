@@ -5,13 +5,15 @@ import { Character } from '../characters/character.model';
 import { map, tap } from 'rxjs/operators';
 import { SpellService } from '../spells/spell.service';
 import { RaceService } from '../races/race.service';
+import { MonsterService } from '../monsters/monster.service';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
     constructor(private http: HttpClient,
                 private characterService: CharacterService,
                 private spellService: SpellService,
-                private raceService: RaceService) {}     
+                private raceService: RaceService,
+                private monsterService: MonsterService) {}     
  
     storeCharacters() { 
         const characters = this.characterService.getCharacters();
@@ -57,7 +59,7 @@ export class DataStorageService {
         .get('https://www.dnd5eapi.co' + url)
     }
 
-    fetchRaces() {
+    fetchMonsters() {
         return this.http
         .get('https://www.dnd5eapi.co/api/races')
         .pipe(
@@ -69,6 +71,22 @@ export class DataStorageService {
             }),
             tap(races => {
                 this.raceService.setRaces(races); 
+            }) 
+        );
+    }
+
+    fetchRaces() {
+        return this.http
+        .get('https://www.dnd5eapi.co/api/monsters')
+        .pipe(
+            map((monsters: any) => {
+                console.log(monsters);
+                return monsters.results.map(monster => {
+                    return {...monster};
+                });
+            }),
+            tap(monsters => {
+                this.monsterService.setMonsters(monsters); 
             }) 
         );
     }
