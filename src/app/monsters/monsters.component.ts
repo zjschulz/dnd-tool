@@ -14,7 +14,7 @@ export class MonstersComponent implements OnInit {
     
   }
 
-  onFetchRaces() {
+  onFetchMonsters() {
     this.dataStorageService.fetchMonsters().subscribe();
   }
 
