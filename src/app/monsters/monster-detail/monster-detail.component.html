@@ -43,4 +43,8 @@
     <div><b>Languages</b> {{ data.languages }}</div>
     <div><b>Challenge Rating</b> {{ data.challenge_rating }}</div>
     <hr>
+    <p *ngFor="let para of data.special_abilities"><b>{{ para.name }}</b> {{ para.desc }}</p>
+    <hr>
+    <p *ngFor="let para of data.actions"><b>{{ para.name }}</b> {{ para.desc }}</p>
+    <hr>
 </div>
