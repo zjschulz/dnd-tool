@@ -13,6 +13,7 @@ export class MonsterDetailComponent implements OnInit {
   monster: Monster;
   id: number;
   data: any;
+  speed: any;
 
   constructor(private monsterService: MonsterService,
               private route: ActivatedRoute,
@@ -28,6 +29,7 @@ export class MonsterDetailComponent implements OnInit {
         .subscribe((res: any) => {
           console.log(res);
           this.data = res;
+          this.speed = res.speed;
         });
       }
     )

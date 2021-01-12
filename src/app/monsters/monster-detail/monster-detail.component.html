@@ -1,4 +1,11 @@
 <div class="row">
     <h1>{{ data.name }}</h1>
+    <i>{{ data.size }} {{ data.type }}, {{ data.alignment }}</i>
     <hr>
+    <p><b>Armor Class</b> {{ data.armor_class }}</p>
+    <p><b>Hit Points</b> {{ data.hit_points }} ({{ data.hit_dice }})</p>
+    <div style="display: flex;">
+        <b>Speed</b>
+        <div *ngFor="let item of speed | keyvalue"><b style="color: white;">_</b>{{item.key}} {{item.value}}</div>
+    </div>
 </div>
