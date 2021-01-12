@@ -2,10 +2,34 @@
     <h1>{{ data.name }}</h1>
     <i>{{ data.size }} {{ data.type }}, {{ data.alignment }}</i>
     <hr>
-    <p><b>Armor Class</b> {{ data.armor_class }}</p>
-    <p><b>Hit Points</b> {{ data.hit_points }} ({{ data.hit_dice }})</p>
+    <div><b>Armor Class</b> {{ data.armor_class }}</div>
+    <div><b>Hit Points</b> {{ data.hit_points }} ({{ data.hit_dice }})</div>
     <div style="display: flex;">
         <b>Speed</b>
         <div *ngFor="let item of speed | keyvalue"><b style="color: white;">_</b>{{item.key}} {{item.value}}</div>
     </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-4">
+            STR: {{ data.strength }} ({{STR}})
+        </div>
+        <div class="col-xs-4">
+            DEX: {{ data.dexterity }} ({{DEX}})
+        </div>
+        <div class="col-xs-4">
+            CON: {{ data.constitution }} ({{CON}})
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            INT: {{ data.intelligence }} ({{INT}})
+        </div>
+        <div class="col-xs-4">
+            WIS: {{ data.wisdom }} ({{WIS}})
+        </div>
+        <div class="col-xs-4">
+            CHA: {{ data.charisma }} ({{CHA}})
+        </div>
+    </div>
+    <hr>
 </div>

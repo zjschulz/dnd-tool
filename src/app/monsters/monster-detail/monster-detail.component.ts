@@ -14,6 +14,13 @@ export class MonsterDetailComponent implements OnInit {
   id: number;
   data: any;
   speed: any;
+  STR: number;
+  DEX: number;
+  CON: number;
+  INT: number;
+  WIS: number;
+  CHA: number;
+  
 
   constructor(private monsterService: MonsterService,
               private route: ActivatedRoute,
@@ -30,6 +37,12 @@ export class MonsterDetailComponent implements OnInit {
           console.log(res);
           this.data = res;
           this.speed = res.speed;
+          this.STR = Math.floor((res.strength-10)/2);
+          this.DEX = Math.floor((res.dexterity-10)/2);
+          this.CON = Math.floor((res.constitution-10)/2);
+          this.INT = Math.floor((res.intelligence-10)/2);
+          this.WIS = Math.floor((res.wisdom-10)/2);
+          this.CHA = Math.floor((res.charisma-10)/2);
         });
       }
     )
