@@ -32,4 +32,15 @@
         </div>
     </div>
     <hr>
+    <div>
+        <b>Saving Throws/ Skills</b>
+        <div *ngFor="let prof of proficiencies">{{ prof.proficiency.name }} +{{ prof.value }}</div>
+    </div>
+    <div style="display: flex;">
+        <b>Senses</b>
+        <div *ngFor="let item of senses | keyvalue"><b style="color: white;">_</b>{{item.key.split("_").join(" ")}} {{item.value}}</div>
+    </div>
+    <div><b>Languages</b> {{ data.languages }}</div>
+    <div><b>Challenge Rating</b> {{ data.challenge_rating }}</div>
+    <hr>
 </div>

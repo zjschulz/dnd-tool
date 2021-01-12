@@ -14,12 +14,14 @@ export class MonsterDetailComponent implements OnInit {
   id: number;
   data: any;
   speed: any;
+  senses: any;
   STR: number;
   DEX: number;
   CON: number;
   INT: number;
   WIS: number;
   CHA: number;
+  proficiencies: [];
   
 
   constructor(private monsterService: MonsterService,
@@ -43,6 +45,8 @@ export class MonsterDetailComponent implements OnInit {
           this.INT = Math.floor((res.intelligence-10)/2);
           this.WIS = Math.floor((res.wisdom-10)/2);
           this.CHA = Math.floor((res.charisma-10)/2);
+          this.senses = res.senses;
+          this.proficiencies = res.proficiencies;
         });
       }
     )
