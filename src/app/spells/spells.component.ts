@@ -11,7 +11,7 @@ export class SpellsComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
-    
+    this.onFetchSpells();
   }
 
   onFetchSpells() {

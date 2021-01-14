@@ -11,7 +11,7 @@ export class MonstersComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
-    
+    this.onFetchMonsters();
   }
 
   onFetchMonsters() {

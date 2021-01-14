@@ -11,7 +11,7 @@ export class RacesComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService) { }
 
   ngOnInit() {
-    
+    this.onFetchRaces();
   }
 
   onFetchRaces() {
