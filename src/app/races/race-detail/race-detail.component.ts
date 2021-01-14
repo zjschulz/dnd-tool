@@ -16,6 +16,8 @@ export class RaceDetailComponent implements OnInit {
   traits: [];
   bonuses: [];
   proficiencies: [];
+  hasProf = true;
+  hasTrait = true;
   proficiency_options: [];
 
   constructor(private raceService: RaceService,
@@ -35,8 +37,14 @@ export class RaceDetailComponent implements OnInit {
           console.log(res);
           this.data = res;
           this.traits = res.traits;
+          if (res.traits == []) {
+            this.hasTrait = false;
+          }
           this.bonuses = res.ability_bonuses;
           this.proficiencies = res.starting_proficiencies;
+          if (res.starting_proficiencies == []) {
+            this.hasProf = false;
+          }
           if (res.starting_proficiency_options) {
             this.proficiency_options = res.starting_proficiency_options.from;
           }
