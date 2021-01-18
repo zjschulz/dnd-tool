@@ -8,7 +8,9 @@ import { SharedModule } from '../shared/shared.module';
 import { SpellsRoutingModule } from './spells-routing.module';
 import { SpellDetailComponent } from './spell-detail/spell-detail.component';
 import { CommonModule } from '@angular/common';
-import { FilterPipe } from './filter.pipe';
+import { FilterPipe } from '../filter.pipe';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -23,7 +25,8 @@ import { FilterPipe } from './filter.pipe';
         RouterModule,
         SpellsRoutingModule,
         SharedModule,
-        CommonModule
+        CommonModule,
+        FormsModule
     ],
     exports: [
         SpellsComponent,

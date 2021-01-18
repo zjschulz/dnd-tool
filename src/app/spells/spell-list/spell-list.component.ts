@@ -11,6 +11,7 @@ import { Spell } from '../spell.model';
 export class SpellListComponent implements OnInit, OnDestroy {
   spells: Spell[] = [];
   subscription: Subscription;
+  filteredName: '';
 
   constructor(private spellService: SpellService) { }
 
