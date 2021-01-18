@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { SpellsRoutingModule } from './spells-routing.module';
 import { SpellDetailComponent } from './spell-detail/spell-detail.component';
 import { CommonModule } from '@angular/common';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
         SpellStartComponent,
         SpellListComponent,
         SpellDetailComponent,
-        SpellItemComponent
+        SpellItemComponent,
+        FilterPipe
     ],
     imports: [
         RouterModule,
