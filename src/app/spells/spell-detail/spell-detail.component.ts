@@ -11,7 +11,7 @@ import { DataStorageService } from 'src/app/shared/data-storage.service';
 })
 export class SpellDetailComponent implements OnInit {
   spell: Spell;
-  id: number;
+  index: string;
   data: any;
   components: [];
   desc: [];
@@ -25,11 +25,14 @@ export class SpellDetailComponent implements OnInit {
     this.route.params
     .subscribe( 
       (params: Params) => {
-        this.id = +params['id'];
-        this.spell = this.spellService.getSpell(this.id);
+        debugger
+        // this.id = +params['id'];
+        this.index = params['index']
+        // this.spell = this.spellService.getSpell(this.id);
+        this.spell = this.spellService.getSpell(this.index)[0];
         this.dataStorageService.fetchUrl(this.spell.url)
         .subscribe((res: any) => {
-          console.log(res);
+          console.log(res); 
           this.data = res;
           this.desc = res.desc;
           this.components = res.components;

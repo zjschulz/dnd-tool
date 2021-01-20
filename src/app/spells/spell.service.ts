@@ -28,10 +28,13 @@ export class SpellService {
         return this.spells.slice();
     }
 
-    getSpell(index: number) {
-        return this.spells[index];
-    }
+    // getSpell(index: number) {
+    //     return this.spells[index];
+    // }
 
-    
+    // using index property of spells
+    getSpell(index: string) {
+        return this.spells.filter(spell => {return spell.index === index});
+    }
 
 }
