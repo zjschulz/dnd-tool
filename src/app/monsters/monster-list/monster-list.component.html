@@ -7,10 +7,12 @@
             placeholder="Name">
         </label>
         <hr>
-        <app-monster-item
-        *ngFor="let monsterEl of monsters | filter:filteredName:'name'"
-        [monster]="monsterEl"
-        [index]="monsterEl.index"></app-monster-item>
+        <div class="scroll-img">
+            <app-monster-item
+            *ngFor="let monsterEl of monsters | filter:filteredName:'name'"
+            [monster]="monsterEl"
+            [index]="monsterEl.index"></app-monster-item>
+        </div>
     </div>
 </div>
 

@@ -7,10 +7,12 @@
             placeholder="Name">
         </label>
         <hr>
-        <app-spell-item
-        *ngFor="let spellEl of spells | filter:filteredName:'name'"
-        [spell]="spellEl"
-        [index]="spellEl.index"></app-spell-item>
+        <div class="scroll-img">
+            <app-spell-item
+            *ngFor="let spellEl of spells | filter:filteredName:'name'"
+            [spell]="spellEl"
+            [index]="spellEl.index"></app-spell-item> 
+        </div>
     </div> 
 </div>
 
