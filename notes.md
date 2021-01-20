@@ -8,6 +8,7 @@
             II. Can you add a delay to html elements loading?
             SOLVED! in NgOnInit I updated filteredName to ''
         B. Search needs to not be an exact match. Looking for any name that includes the search input.
+            SOLVED! Updated logic
         C. Routing to Detail Comp is done through id.
             SOLVED! Used index property instead of id 
 
