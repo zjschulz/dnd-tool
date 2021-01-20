@@ -8,8 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 import { SpellsRoutingModule } from './spells-routing.module';
 import { SpellDetailComponent } from './spell-detail/spell-detail.component';
 import { CommonModule } from '@angular/common';
-import { FilterPipe } from '../filter.pipe';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -18,8 +16,7 @@ import { FormsModule } from '@angular/forms';
         SpellStartComponent,
         SpellListComponent,
         SpellDetailComponent,
-        SpellItemComponent,
-        FilterPipe
+        SpellItemComponent
     ],
     imports: [
         RouterModule,

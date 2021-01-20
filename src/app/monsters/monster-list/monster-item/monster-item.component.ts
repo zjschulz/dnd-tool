@@ -8,7 +8,7 @@ import { Monster } from '../../monster.model';
 })
 export class MonsterItemComponent implements OnInit {
   @Input() monster: Monster;
-  @Input() index: number;
+  @Input() index: string;
 
   ngOnInit() {
   }

@@ -4,14 +4,15 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
 import { PlaceholderDirective } from './placeholder/placeholder.directive';
 import { DropdownDirective } from './dropdown.directive';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
     declarations: [
         AlertComponent,
         LoadingSpinnerComponent,
         PlaceholderDirective,
-        DropdownDirective
+        DropdownDirective,
+        FilterPipe
     ],
     imports: [
         CommonModule
@@ -21,7 +22,8 @@ import { BrowserModule } from '@angular/platform-browser';
         LoadingSpinnerComponent,
         PlaceholderDirective,
         DropdownDirective,
-        CommonModule
+        CommonModule,
+        FilterPipe
     ],
     entryComponents: [AlertComponent]
 })

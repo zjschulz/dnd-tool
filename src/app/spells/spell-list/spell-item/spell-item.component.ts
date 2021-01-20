@@ -8,7 +8,7 @@ import { Spell } from '../../spell.model';
 })
 export class SpellItemComponent implements OnInit {
   @Input() spell: Spell;
-  @Input() index: number;
+  @Input() index: string;
 
   ngOnInit() {
   }

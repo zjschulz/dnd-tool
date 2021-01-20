@@ -10,11 +10,13 @@ import { MonsterService } from '../monster.service';
 })
 export class MonsterListComponent implements OnInit, OnDestroy {
   monsters: Monster[] = [];
+  filteredName: string;
   subscription: Subscription;
 
   constructor(private monsterService: MonsterService) { }
 
   ngOnInit() {
+    this.filteredName = '';
     this.subscription = this.monsterService.monstersChanged
       .subscribe(
         (monsters: Monster[]) => {

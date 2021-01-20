@@ -10,8 +10,9 @@ const routes: Routes = [
         component: MonstersComponent,
         children: [
         { path: '', component: MonsterStartComponent },
-        { path: ':id', component: MonsterDetailComponent }
-    ] 
+        { path: ':index', component: MonsterDetailComponent }
+        // { path: ':id', component: MonsterDetailComponent }
+    ]  
     }
 ]
 

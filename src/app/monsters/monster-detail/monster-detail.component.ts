@@ -11,7 +11,7 @@ import { MonsterService } from '../monster.service';
 })
 export class MonsterDetailComponent implements OnInit {
   monster: Monster;
-  id: number;
+  index: string;
   data: any;
   speed: any;
   senses: any;
@@ -32,8 +32,10 @@ export class MonsterDetailComponent implements OnInit {
     this.route.params
     .subscribe( 
       (params: Params) => {
-        this.id = +params['id'];
-        this.monster = this.monsterService.getMonster(this.id);
+        // this.id = +params['id'];
+        this.index = params['index'];
+        // this.monster = this.monsterService.getMonster(this.id);
+        this.monster = this.monsterService.getMonster(this.index)[0];
         this.dataStorageService.fetchUrl(this.monster.url)
         .subscribe((res: any) => {
           console.log(res);

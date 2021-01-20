@@ -8,6 +8,7 @@ import { MonsterStartComponent } from './monster-start/monster-start.component';
 import { MonsterListComponent } from './monster-list/monster-list.component';
 import { MonsterDetailComponent } from './monster-detail/monster-detail.component';
 import { MonsterItemComponent } from './monster-list/monster-item/monster-item.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MonsterItemComponent } from './monster-list/monster-item/monster-item.c
         RouterModule,
         MonstersRoutingModule,
         SharedModule,
-        CommonModule
+        CommonModule,
+        FormsModule
     ],
     exports: [
         MonstersComponent,

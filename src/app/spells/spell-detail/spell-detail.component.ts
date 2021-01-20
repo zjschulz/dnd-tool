@@ -25,7 +25,6 @@ export class SpellDetailComponent implements OnInit {
     this.route.params
     .subscribe( 
       (params: Params) => {
-        debugger
         // this.id = +params['id'];
         this.index = params['index']
         // this.spell = this.spellService.getSpell(this.id);

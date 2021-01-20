@@ -28,10 +28,12 @@ export class MonsterService {
         return this.monsters.slice();
     }
 
-    getMonster(index: number) {
-        return this.monsters[index];
-    }
+    // getMonster(index: number) {
+    //     return this.monsters[index];
+    // }
 
-    
+    getMonster(index: string) {
+        return this.monsters.filter(monster => {return monster.index === index});
+    }
 
 }
