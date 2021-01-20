@@ -11,11 +11,12 @@ import { Spell } from '../spell.model';
 export class SpellListComponent implements OnInit, OnDestroy {
   spells: Spell[] = [];
   subscription: Subscription;
-  filteredName: '';
+  filteredName: string;
 
   constructor(private spellService: SpellService) { }
 
   ngOnInit() {
+    this.filteredName = '';
     this.subscription = this.spellService.spellsChanged
       .subscribe(
         (spells: Spell[]) => {

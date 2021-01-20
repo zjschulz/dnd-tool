@@ -6,8 +6,10 @@
             Solutions?:
             I. Add a button to display the spells
             II. Can you add a delay to html elements loading?
+            SOLVED! in NgOnInit I updated filteredName to ''
         B. Search needs to not be an exact match. Looking for any name that includes the search input.
-        C. Routing to Detail Comp is done through id. 
+        C. Routing to Detail Comp is done through id.
+            SOLVED! Used index property instead of id 
 
 # Goals
     1. Create Search/Filter Functionality For Components
