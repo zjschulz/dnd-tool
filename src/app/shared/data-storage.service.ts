@@ -6,6 +6,7 @@ import { map, tap } from 'rxjs/operators';
 import { SpellService } from '../spells/spell.service';
 import { RaceService } from '../races/race.service';
 import { MonsterService } from '../monsters/monster.service';
+import { ItemService } from '../items/item.service';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
@@ -13,7 +14,8 @@ export class DataStorageService {
                 private characterService: CharacterService,
                 private spellService: SpellService,
                 private raceService: RaceService,
-                private monsterService: MonsterService) {}     
+                private monsterService: MonsterService,
+                private itemService: ItemService) {}     
  
     storeCharacters() { 
         const characters = this.characterService.getCharacters();
@@ -97,12 +99,13 @@ export class DataStorageService {
         .pipe(
             map((items: any) => {
                 console.log(items);
+                debugger
                 return items.results.map(item => {
                     return {...item};
                 });
             }),
             tap(items => {
-                this.monsterService.setMonsters(items); 
+                this.itemService.setItems(items); 
             }) 
         );
     }

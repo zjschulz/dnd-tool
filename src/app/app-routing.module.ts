@@ -24,6 +24,10 @@ const appRoutes: Routes = [
     {
         path: 'monsters',
         loadChildren: () => import('./monsters/monsters.module').then(m => m.MonstersModule)
+    },
+    {
+        path: 'items',
+        loadChildren: () => import('./items/items.module').then(m => m.ItemsModule)
     }
 ];
 

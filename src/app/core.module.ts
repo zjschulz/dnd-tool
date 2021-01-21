@@ -5,6 +5,7 @@ import { CharacterService } from './characters/character.service';
 import { SpellService } from './spells/spell.service';
 import { RaceService } from './races/race.service';
 import { MonsterService } from './monsters/monster.service';
+import { ItemService } from './items/item.service';
 
 @NgModule({
     providers: [
@@ -12,6 +13,7 @@ import { MonsterService } from './monsters/monster.service';
         SpellService,
         RaceService,
         MonsterService,
+        ItemService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptorService,

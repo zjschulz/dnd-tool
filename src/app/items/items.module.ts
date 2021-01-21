@@ -8,6 +8,7 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemItemComponent } from './item-list/item-item/item-item.component';
 import { ItemsRoutingModule } from './items-routing.module';
+import { ItemsComponent } from './items.component';
 
 @NgModule({
     declarations: [

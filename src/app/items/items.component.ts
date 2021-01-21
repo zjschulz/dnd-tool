@@ -15,7 +15,7 @@ export class ItemsComponent implements OnInit {
   }
 
   onFetchItems() {
-    this.dataStorageService.fetchItems
+    this.dataStorageService.fetchItems().subscribe();
   }
 
 }
