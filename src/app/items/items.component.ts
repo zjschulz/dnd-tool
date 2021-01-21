@@ -6,7 +6,7 @@ import { DataStorageService } from '../shared/data-storage.service';
     templateUrl: './items.component.html',
     styleUrls: ['./items.component.css']
   })
-export class ItemComponent implements OnInit {
+export class ItemsComponent implements OnInit {
 
   constructor(private dataStorageService: DataStorageService) {}
 
