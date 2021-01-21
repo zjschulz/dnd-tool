@@ -39,6 +39,11 @@ export class DataStorageService {
             )
     }
 
+    fetchUrl(url) {
+        return this.http
+        .get('https://www.dnd5eapi.co' + url)
+    }
+
     fetchSpells() {
         return this.http
         .get('https://www.dnd5eapi.co/api/spells')
@@ -52,11 +57,6 @@ export class DataStorageService {
                 this.spellService.setSpells(spells); 
             }) 
         );
-    }
-
-    fetchUrl(url) {
-        return this.http
-        .get('https://www.dnd5eapi.co' + url)
     }
 
     fetchRaces() {
@@ -87,6 +87,22 @@ export class DataStorageService {
             }),
             tap(monsters => {
                 this.monsterService.setMonsters(monsters); 
+            }) 
+        );
+    }
+
+    fetchItems() {
+        return this.http
+        .get('https://www.dnd5eapi.co/api/equipment')
+        .pipe(
+            map((items: any) => {
+                console.log(items);
+                return items.results.map(item => {
+                    return {...item};
+                });
+            }),
+            tap(items => {
+                this.monsterService.setMonsters(items); 
             }) 
         );
     }
