@@ -99,7 +99,6 @@ export class DataStorageService {
         .pipe(
             map((items: any) => {
                 console.log(items);
-                debugger
                 return items.results.map(item => {
                     return {...item};
                 });
