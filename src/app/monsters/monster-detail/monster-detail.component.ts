@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Monster } from '../monster.model';
 import { MonsterService } from '../monster.service';
-
+ 
 @Component({
   selector: 'app-monster-detail',
   templateUrl: './monster-detail.component.html',
