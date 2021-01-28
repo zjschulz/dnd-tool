@@ -3,8 +3,9 @@
     <p>{{ data.weight }} pounds</p>
     <p>{{ data.cost.quantity }} {{ data.cost.unit }}</p>
     <div *ngIf="isWeapon">
+        <hr>
         <p><strong>Attack Type </strong>{{ data.category_range }}</p>
-        <p><strong>Reach </strong>{{ data.range.normal }} ft.</p>
+        <p><strong>Reach </strong>{{ data.range.normal }} {{ data.range.long }} ft.</p>
         <p><strong>Damage </strong>{{ data.damage.damage_dice }}</p>
         <p><strong>Damage Type </strong>{{ data.damage.damage_type.name }}</p>
         <p></p>
