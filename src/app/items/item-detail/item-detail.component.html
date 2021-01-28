@@ -3,7 +3,15 @@
     <p>{{ data.weight }} pounds</p>
     <p>{{ data.cost.quantity }} {{ data.cost.unit }}</p>
     <div *ngIf="isWeapon">
-        Weapon
+        <p><strong>Attack Type </strong>{{ data.category_range }}</p>
+        <p><strong>Reach </strong>{{ data.range.normal }} ft.</p>
+        <p><strong>Damage </strong>{{ data.damage.damage_dice }}</p>
+        <p><strong>Damage Type </strong>{{ data.damage.damage_type.name }}</p>
+        <p></p>
+        <strong>Properties </strong><div *ngFor="let prop of data.properties">{{ prop.name }}</div>
+        <p></p>
+        <p><strong>Weight </strong>{{ data.weight }} lbs</p>
+        <p><strong>Cost </strong>{{ data.cost.quantity }} {{ data.cost.unit }}</p>
     </div>
     <div *ngIf="isArmor">
         Armor
@@ -19,5 +27,17 @@
     </div>
     <div *ngIf="isMountsAndVehicles">
         Mounts and Vehicle
+    </div>
+    <div *ngIf="isHolySymbol">
+        Holy Symbol
+    </div>
+    <div *ngIf="isDruidicFoci">
+        Druidic Foci
+    </div>
+    <div *ngIf="isArcaneFoci">
+        Arcane Foci
+    </div>
+    <div *ngIf="isAmmunition">
+        Ammunition
     </div>
 </div>
