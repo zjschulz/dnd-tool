@@ -2,4 +2,22 @@
     <h1>{{ data.name }}</h1>
     <p>{{ data.weight }} pounds</p>
     <p>{{ data.cost.quantity }} {{ data.cost.unit }}</p>
+    <div *ngIf="isWeapon">
+        Weapon
+    </div>
+    <div *ngIf="isArmor">
+        Armor
+    </div>
+    <div *ngIf="isStandardGear">
+        Standard
+    </div>
+    <div *ngIf="isEquipmentPack">
+        Equipment Pack
+    </div>
+    <div *ngIf="isTool">
+        Tool
+    </div>
+    <div *ngIf="isMountsAndVehicles">
+        Mounts and Vehicle
+    </div>
 </div>
