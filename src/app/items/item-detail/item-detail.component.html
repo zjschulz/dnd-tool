@@ -18,12 +18,15 @@
             <i>+ DEX</i>
         </div>
         <div *ngIf="data.armor_class.max_bonus">
-            <p></p>
-            <strong>Max Bonus </strong>{{ data.armor_class.max_bonus }}
+            <i>(Max DEX Bonus {{ data.armor_class.max_bonus }})</i>
         </div>
         <div *ngIf="data.stealth_disadvantage">
             <p></p>
             <i>Stealth Disadvantage</i>
+        </div>
+        <div *ngIf="data.str_minimum > 0">
+            <p></p>
+            <strong>STR Minimum </strong>{{ data.str_minimum }}
         </div>
     </div>
     <div *ngIf="isStandardGear">
