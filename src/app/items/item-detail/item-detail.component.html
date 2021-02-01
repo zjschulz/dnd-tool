@@ -1,5 +1,6 @@
 <div class="row">
     <h1>{{ data.name }}</h1>
+    <p><i>{{ data.equipment_category.name }}</i></p>
     <div *ngIf="isWeapon">
         <hr>
         <p><strong>Attack Type </strong>{{ data.category_range }}</p>
@@ -29,11 +30,12 @@
             <strong>STR Minimum </strong>{{ data.str_minimum }}
         </div>
     </div>
-    <div *ngIf="isStandardGear">
-        Standard
-    </div>
     <div *ngIf="isEquipmentPack">
-        Equipment Pack
+        <p><i>{{ data.gear_category.name }}</i></p>
+        <hr>
+        <div *ngFor="let content of data.contents">
+            {{ content.quantity }} {{ content.item.name }}
+        </div>
     </div>
     <div *ngIf="isTool">
         Tool
