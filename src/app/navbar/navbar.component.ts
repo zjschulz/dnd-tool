@@ -1,11 +1,12 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, OnDestroy, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html'
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   collapsed = true;
@@ -41,5 +42,23 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
       this.userSub.unsubscribe();
   }
+
+  @ViewChild('stickyMenu') menuElement: ElementRef;
+  sticky: boolean = false;
+  elementPosition: any;
+
+  ngAfterViewInit(){
+    this.elementPosition = this.menuElement.nativeElement.offsetTop;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+    handleScroll(){
+      const windowScroll = window.pageYOffset;
+      if(windowScroll >= this.elementPosition){
+        this.sticky = true;
+      } else {
+        this.sticky = false;
+      }
+    }
 
 }
