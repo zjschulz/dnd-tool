@@ -1,7 +1,5 @@
 <div class="row">
     <h1>{{ data.name }}</h1>
-    <p>{{ data.weight }} pounds</p>
-    <p>{{ data.cost.quantity }} {{ data.cost.unit }}</p>
     <div *ngIf="isWeapon">
         <hr>
         <p><strong>Attack Type </strong>{{ data.category_range }}</p>
@@ -11,11 +9,22 @@
         <p></p>
         <strong>Properties </strong><div *ngFor="let prop of data.properties">{{ prop.name }}</div>
         <p></p>
-        <p><strong>Weight </strong>{{ data.weight }} lbs</p>
-        <p><strong>Cost </strong>{{ data.cost.quantity }} {{ data.cost.unit }}</p>
     </div>
     <div *ngIf="isArmor">
-        Armor
+        <hr>
+        <p><strong>Armor Category </strong>{{ data.armor_category }}</p>
+        <p><strong>Armor Class </strong>{{ data.armor_class.base }}</p>
+        <div *ngIf="data.armor_class.dex_bonus">
+            <i>+ DEX</i>
+        </div>
+        <div *ngIf="data.armor_class.max_bonus">
+            <p></p>
+            <strong>Max Bonus </strong>{{ data.armor_class.max_bonus }}
+        </div>
+        <div *ngIf="data.stealth_disadvantage">
+            <p></p>
+            <i>Stealth Disadvantage</i>
+        </div>
     </div>
     <div *ngIf="isStandardGear">
         Standard
@@ -41,4 +50,7 @@
     <div *ngIf="isAmmunition">
         Ammunition
     </div>
+    <p></p>
+    <p><strong>Weight </strong>{{ data.weight }} lbs</p>
+    <p><strong>Cost </strong>{{ data.cost.quantity }} {{ data.cost.unit }}</p>
 </div>
