@@ -37,6 +37,13 @@
             {{ content.quantity }} {{ content.item.name }}
         </div>
     </div>
+    <div *ngIf="isStandardGear">
+        <p><i>{{ data.gear_category.name }}</i></p>
+        <hr>
+        <div *ngFor="let desc of data.desc">
+            {{ desc }}
+        </div>
+    </div>
     <div *ngIf="isTool">
         <p><i>{{ data.tool_category }}</i></p>
         <hr>
@@ -58,16 +65,30 @@
         </div>
     </div>
     <div *ngIf="isHolySymbol">
-        Holy Symbol
+        <p><i>{{ data.gear_category.name }}</i></p>
+        <hr>
+        <div *ngFor="let desc of data.desc">
+            {{ desc }}
+        </div>
     </div>
     <div *ngIf="isDruidicFoci">
-        Druidic Foci
+        <p><i>{{ data.gear_category.name }}</i></p>
+        <hr>
+        <div *ngFor="let desc of data.desc">
+            {{ desc }}
+        </div>
     </div>
     <div *ngIf="isArcaneFoci">
-        Arcane Foci
+        <p><i>{{ data.gear_category.name }}</i></p>
+        <hr>
+        <div *ngFor="let desc of data.desc">
+            {{ desc }}
+        </div>
     </div>
     <div *ngIf="isAmmunition">
-        Ammunition
+        <p><i>{{ data.gear_category.name }}</i></p>
+        <hr>
+        <p><strong>Quantity </strong>{{ data.quantity }}</p>
     </div>
     <p></p>
     <p><strong>Weight </strong>{{ data.weight }} lbs</p>
