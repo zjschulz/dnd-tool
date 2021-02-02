@@ -38,10 +38,24 @@
         </div>
     </div>
     <div *ngIf="isTool">
-        Tool
+        <p><i>{{ data.tool_category }}</i></p>
+        <hr>
+        <div *ngFor="let desc of data.desc">
+            {{ desc }}
+        </div>
     </div>
-    <div *ngIf="isMountsAndVehicles">
-        Mounts and Vehicle
+    <div *ngIf="isMountsOtherAnimals">
+        <p><i>{{ data.vehicle_category }}</i></p>
+        <hr>
+        <p><strong>Speed </strong>{{ data.speed.quantity }} {{ data.speed.unit }}</p>
+        <p><strong>Capacity </strong>{{ data.capacity }}</p>
+    </div>
+    <div *ngIf="isTackHarnessDrawn">
+        <p><i>{{ data.vehicle_category }}</i></p>
+        <hr>
+        <div *ngFor="let desc of data.desc">
+            {{ desc }}
+        </div>
     </div>
     <div *ngIf="isHolySymbol">
         Holy Symbol

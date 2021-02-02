@@ -21,7 +21,8 @@ export class ItemDetailComponent implements OnInit{
   isHolySymbol: boolean;
   isDruidicFoci: boolean;
   isArcaneFoci: boolean;
-  isMountsAndVehicles: boolean;
+  isMountsOtherAnimals: boolean;
+  isTackHarnessDrawn: boolean;
   isAmmunition: boolean;
 
 
@@ -49,7 +50,8 @@ export class ItemDetailComponent implements OnInit{
                           this.isHolySymbol = false;
                           this.isDruidicFoci = false;
                           this.isArcaneFoci = false;
-                          this.isMountsAndVehicles = false;
+                          this.isMountsOtherAnimals = false;
+                          this.isTackHarnessDrawn = false;
                           this.isAmmunition = false;
                           break;
                         case "Armor":
@@ -61,7 +63,8 @@ export class ItemDetailComponent implements OnInit{
                           this.isHolySymbol = false;
                           this.isDruidicFoci = false;
                           this.isArcaneFoci = false;
-                          this.isMountsAndVehicles = false;
+                          this.isMountsOtherAnimals = false;
+                          this.isTackHarnessDrawn = false;
                           this.isAmmunition = false;
                           break;
                         case "Adventuring Gear":
@@ -74,7 +77,8 @@ export class ItemDetailComponent implements OnInit{
                             this.isHolySymbol = false;
                             this.isDruidicFoci = false;
                             this.isArcaneFoci = false;
-                            this.isMountsAndVehicles = false;
+                            this.isMountsOtherAnimals = false;
+                            this.isTackHarnessDrawn = false;
                             this.isAmmunition = false;
                           }
                           else if (res.gear_category.name === "Equipment Packs") {
@@ -86,7 +90,8 @@ export class ItemDetailComponent implements OnInit{
                             this.isHolySymbol = false;
                             this.isDruidicFoci = false;
                             this.isArcaneFoci = false;
-                            this.isMountsAndVehicles = false;
+                            this.isMountsOtherAnimals = false;
+                            this.isTackHarnessDrawn = false;
                             this.isAmmunition = false;
                           }
                           else if (res.gear_category.name === "Holy Symbols") {
@@ -98,7 +103,8 @@ export class ItemDetailComponent implements OnInit{
                             this.isHolySymbol = true;
                             this.isDruidicFoci = false;
                             this.isArcaneFoci = false;
-                            this.isMountsAndVehicles = false;
+                            this.isMountsOtherAnimals = false;
+                            this.isTackHarnessDrawn = false;
                             this.isAmmunition = false;
                           }
                           else if (res.gear_category.name === "Druidic Foci") {
@@ -110,7 +116,8 @@ export class ItemDetailComponent implements OnInit{
                             this.isHolySymbol = false;
                             this.isDruidicFoci = true;
                             this.isArcaneFoci = false;
-                            this.isMountsAndVehicles = false;
+                            this.isMountsOtherAnimals = false;
+                            this.isTackHarnessDrawn = false;
                             this.isAmmunition = false;
                           }
                           else if (res.gear_category.name === "Arcane Foci") {
@@ -122,7 +129,8 @@ export class ItemDetailComponent implements OnInit{
                             this.isHolySymbol = false;
                             this.isDruidicFoci = false;
                             this.isArcaneFoci = true;
-                            this.isMountsAndVehicles = false;
+                            this.isMountsOtherAnimals = false;
+                            this.isTackHarnessDrawn = false;
                             this.isAmmunition = false;
                           }
                           else if (res.gear_category.name === "Ammunition") {
@@ -134,7 +142,8 @@ export class ItemDetailComponent implements OnInit{
                             this.isHolySymbol = false;
                             this.isDruidicFoci = false;
                             this.isArcaneFoci = false;
-                            this.isMountsAndVehicles = false;
+                            this.isMountsOtherAnimals = false;
+                            this.isTackHarnessDrawn = false;
                             this.isAmmunition = true;
                           }
                           break;
@@ -147,18 +156,37 @@ export class ItemDetailComponent implements OnInit{
                           this.isHolySymbol = false;
                           this.isDruidicFoci = false;
                           this.isArcaneFoci = false;
-                          this.isMountsAndVehicles = false;
+                          this.isMountsOtherAnimals = false;
+                          this.isTackHarnessDrawn = false;
+                          this.isAmmunition = false;
                           break;  
                         case "Mounts and Vehicles":
-                          this.isWeapon = false;
-                          this.isArmor = false;
-                          this.isStandardGear = false;
-                          this.isEquipmentPack = false;
-                          this.isTool = false;
-                          this.isHolySymbol = false;
-                          this.isDruidicFoci = false;
-                          this.isArcaneFoci = false;
-                          this.isMountsAndVehicles = true;
+                          if (res.vehicle_category === "Tack, Harness, and Drawn Vehicles") {
+                            this.isWeapon = false;
+                            this.isArmor = false;
+                            this.isStandardGear = false;
+                            this.isEquipmentPack = false;
+                            this.isTool = false;
+                            this.isHolySymbol = false;
+                            this.isDruidicFoci = false;
+                            this.isArcaneFoci = false;
+                            this.isMountsOtherAnimals = false;
+                            this.isTackHarnessDrawn = true;
+                            this.isAmmunition = false;
+                          }
+                          else if (res.vehicle_category === "Mounts and Other Animals") {
+                            this.isWeapon = false;
+                            this.isArmor = false;
+                            this.isStandardGear = false;
+                            this.isEquipmentPack = false;
+                            this.isTool = false;
+                            this.isHolySymbol = false;
+                            this.isDruidicFoci = false;
+                            this.isArcaneFoci = false;
+                            this.isMountsOtherAnimals = true;
+                            this.isTackHarnessDrawn = false;
+                            this.isAmmunition = false;
+                          }
                           break;   
                         default:
                           this.isWeapon = false;
@@ -169,7 +197,9 @@ export class ItemDetailComponent implements OnInit{
                           this.isHolySymbol = false;
                           this.isDruidicFoci = false;
                           this.isArcaneFoci = false;
-                          this.isMountsAndVehicles = false;
+                          this.isMountsOtherAnimals = false;
+                          this.isTackHarnessDrawn = false;
+                          this.isAmmunition = false;
                       }
                     });
                   }
