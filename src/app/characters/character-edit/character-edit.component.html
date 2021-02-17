@@ -3,18 +3,6 @@
         <form [formGroup]="characterForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-xs-12">
-                    <button
-                    type="submit"
-                    class="btn btn-success"
-                    [disabled]="!characterForm.valid">Save</button>
-                    <button
-                    type="button"
-                    class="btn btn-danger"
-                    (click)="onCancel()">Cancel</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input
@@ -40,7 +28,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="job">Job</label>
+                        <label for="job">Class</label>
                         <input
                         type="text"
                         id="job"
@@ -52,7 +40,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="subjob">SubJob</label>
+                        <label for="subjob">Sub Class</label>
                         <input
                         type="text"
                         id="subjob"
@@ -64,7 +52,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
-                        <label for="imagePath">Image URL</label>
+                        <label for="imagePath">Image Path</label>
                         <input
                         type="text"
                         id="imagePath"
@@ -87,33 +75,51 @@
                     [formGroupName]="i"
                     style="margin-top: 10px;">
                         <div class="col-xs-8">
+                            <label for="itemName">Item Name</label>
                             <input
+                            id="itemName"
                             type="text"
                             class="form-control"
                             formControlName="name">
                         </div>
                         <div class="col-xs-2">
+                            <label for="amount">Amount</label>
                             <input
+                            id="amount"
                             type="number"
                             class="form-control"
                             formControlName="weight">
                         </div>
                         <div class="col-xs-2">
                             <button
+                            style="margin-top: 24px;"
                             type="button"
                             class="btn btn-danger"
                             (click)="onDeleteItem(i)">X</button>
                         </div>
                     </div>
-                    <hr>
                     <div class="row">
                         <div class="col-xs-12">
                             <button
+                            style="margin-top: 24px;"
                             type="button"
                             class="btn btn-success"
                             (click)="onAddItem()">Add Item</button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button
+                    type="submit"
+                    class="btn btn-success"
+                    [disabled]="!characterForm.valid">Save</button>
+                    <button
+                    type="button"
+                    class="btn btn-danger"
+                    (click)="onCancel()">Cancel</button>
                 </div>
             </div>
         </form>
