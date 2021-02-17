@@ -16,4 +16,4 @@
     1. Create Search/Filter Functionality For Components [X]
     2. Add Scroll Bar to Lists [X]
     3. Update Create Character With More Detailed Options
-    4. DEPLOY
+    4. DEPLOY, updated angular
