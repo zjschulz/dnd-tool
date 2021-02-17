@@ -3,12 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "config": "ts-node ./src/assets/scripts/setEnv.ts",
+    "config": "ts-node ./src/assets/setEnv.ts",
     "start": "npm run config -- --environment=dev && ng serve",
     "build": "npm run config -- --environment=prod && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "engines": {
+    "node": "14.4.0",
+    "npm": "6.14.8"
   },
   "private": true,
   "dependencies": {
@@ -21,14 +26,16 @@
     "@angular/platform-browser-dynamic": "~10.1.6",
     "@angular/router": "~10.1.6",
     "bootstrap": "^3.4.1",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.7",
-    "@angular/cli": "~10.1.7",
-    "@angular/compiler-cli": "~10.1.6",
+    "@angular/cli": "^11.2.0",
+    "@angular/compiler-cli": "^10.1.6",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.19.15",
