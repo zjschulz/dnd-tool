@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.die {
+    width: 4rem;
+}
+
+.square {
+    border: 1px solid black;
+    height: 4rem;
+    width: 4rem;
+    margin: 2px;
+    text-align: center;
+}
+
+input {
+    width: 4rem;
+}
