@@ -56,8 +56,10 @@
     Roll Animation goes here?
 </div>
 <div class="row">
-    Output goes here?
+    {{ results }}
 </div>
 <div class="row">
-    <button>Roll</button>
+    <button
+    type="button"
+    (click)="onSubmit()">Roll</button>
 </div>
