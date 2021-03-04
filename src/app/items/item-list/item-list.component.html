@@ -6,7 +6,6 @@
             [(ngModel)]="filteredName"
             placeholder="Name">
         </label>
-        <hr>
         <div class="scroll-img">
             <app-item-item
             *ngFor="let itemEl of items | filter:filteredName:'name'"

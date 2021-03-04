@@ -6,7 +6,6 @@
             [(ngModel)]="filteredName"
             placeholder="Name">
         </label>
-        <hr>
         <div class="scroll-img">
             <app-spell-item
             *ngFor="let spellEl of spells | filter:filteredName:'name'"
