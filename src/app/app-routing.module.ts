@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { DiceComponent } from './dice/dice.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: 'home', component: HomeComponent },
-    { 
-        path: 'dice',
-        loadChildren: () => import('./dice/dice.module').then(m => m.DiceModule)
-    },
     { 
         path: 'characters',
         loadChildren: () => import('./characters/characters.module').then(m => m.CharactersModule)
@@ -33,6 +28,10 @@ const appRoutes: Routes = [
     {
         path: 'items',
         loadChildren: () => import('./items/items.module').then(m => m.ItemsModule)
+    },
+    { 
+        path: 'dice',
+        loadChildren: () => import('./dice/dice.module').then(m => m.DiceModule)
     }
 ];
 
