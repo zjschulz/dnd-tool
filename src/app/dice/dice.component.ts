@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dice',
@@ -7,10 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiceComponent implements OnInit {
   results: number;
+  diceForm: FormGroup;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  private initForm() {
+    let rollD4 = '';
+    let rollD6 = '';
+    let rollD8 = '';
+    let rollD10 = '';
+    let rollD12 = '';
+    let rollD20 = '';
+    let rollD100 = '';
+
+    this.diceForm = new FormGroup({
+      'd4': new FormControl(rollD4, Validators.required),
+      'd6': new FormControl(rollD6, Validators.required),
+      'd8': new FormControl(rollD8, Validators.required),
+      'd10': new FormControl(rollD10, Validators.required),
+      'd12': new FormControl(rollD12, Validators.required),
+      'd20': new FormControl(rollD20, Validators.required),
+      'd100': new FormControl(rollD100, Validators.required)
+    });
+
   }
 
   rollDice(max) {
