@@ -12,7 +12,8 @@ export class DiceComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.initForm();
   }
 
   private initForm() {

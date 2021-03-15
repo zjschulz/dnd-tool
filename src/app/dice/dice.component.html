@@ -1,65 +1,74 @@
 <div class="row">
     Work In Progress
 </div>
-<div class="row">
-    <div class="die">
-        <div class="square">d4</div>
-        <input
-        type="number"
-        id="d4"
-        value=0>
+<form [formGroup]="diceForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="die">
+            <div class="square">d4</div>
+            <input
+            type="number"
+            id="d4"
+            formControlName="d4"
+            value=0>
+        </div>
+        <div class="die">
+            <div class="square">d6</div>
+            <input
+            type="number"
+            id="d6"
+            formControlName="d6"
+            value=0>
+        </div>
+        <div class="die">
+            <div class="square">d8</div>
+            <input
+            type="number"
+            id="d8"
+            formControlName="d8"
+            value=0>
+        </div>
+        <div class="die">
+            <div class="square">d10</div>
+            <input
+            type="number"
+            id="d10"
+            formControlName="d10"
+            value=0>
+        </div>
+        <div class="die">
+            <div class="square">d12</div>
+            <input
+            type="number"
+            id="d12"
+            formControlName="d12"
+            value=0>
+        </div>
+        <div class="die">
+            <div class="square">d20</div>
+            <input
+            type="number"
+            id="d20"
+            formControlName="d20"
+            value=0>
+        </div>
+        <div class="die">
+            <div class="square">d100</div>
+            <input
+            type="number"
+            id="d100"
+            formControlName="d100"
+            value=0>
+        </div>
     </div>
-    <div class="die">
-        <div class="square">d6</div>
-        <input
-        type="number"
-        id="d6"
-        value=0>
+    <div class="row">
+        <button
+        type="button"
+        (click)="onSubmit()">Roll</button>
     </div>
-    <div class="die">
-        <div class="square">d8</div>
-        <input
-        type="number"
-        id="d8"
-        value=0>
-    </div>
-    <div class="die">
-        <div class="square">d10</div>
-        <input
-        type="number"
-        id="d10"
-        value=0>
-    </div>
-    <div class="die">
-        <div class="square">d12</div>
-        <input
-        type="number"
-        id="d12"
-        value=0>
-    </div>
-    <div class="die">
-        <div class="square">d20</div>
-        <input
-        type="number"
-        id="d20"
-        value=0>
-    </div>
-    <div class="die">
-        <div class="square">d100</div>
-        <input
-        type="number"
-        id="d100"
-        value=0>
-    </div>
-</div>
+</form>
 <div class="row">
     Roll Animation goes here?
 </div>
 <div class="row">
     {{ results }}
-</div>
-<div class="row">
-    <button
-    type="button"
-    (click)="onSubmit()">Roll</button>
 </div>
