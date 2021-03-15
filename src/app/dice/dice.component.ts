@@ -17,13 +17,13 @@ export class DiceComponent implements OnInit {
   }
 
   private initForm() {
-    let rollD4 = '';
-    let rollD6 = '';
-    let rollD8 = '';
-    let rollD10 = '';
-    let rollD12 = '';
-    let rollD20 = '';
-    let rollD100 = '';
+    let rollD4 = 0;
+    let rollD6 = 0;
+    let rollD8 = 0;
+    let rollD10 = 0;
+    let rollD12 = 0;
+    let rollD20 = 0;
+    let rollD100 = 0;
 
     this.diceForm = new FormGroup({
       'd4': new FormControl(rollD4, Validators.required),
@@ -42,7 +42,8 @@ export class DiceComponent implements OnInit {
   }
 
   onSubmit(){
-    this.results = this.rollDice(4) + this.rollDice(6) + this.rollDice(8) + this.rollDice(10) + this.rollDice(12) + this.rollDice(20) + this.rollDice(100)
+    debugger;
+    this.results = this.diceForm.value.d4*this.rollDice(4) + this.diceForm.value.d6*this.rollDice(6) + this.diceForm.value.d8*this.rollDice(8) + this.diceForm.value.d10*this.rollDice(10) + this.diceForm.value.d12*this.rollDice(12) + this.diceForm.value.d20*this.rollDice(20) + this.diceForm.value.d100*this.rollDice(100)
     console.log(this.results)
   }
 
