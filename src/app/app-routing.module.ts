@@ -6,7 +6,10 @@ import { DiceComponent } from './dice/dice.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: 'home', component: HomeComponent },
-    { path: 'dice', component: DiceComponent },
+    { 
+        path: 'dice',
+        loadChildren: () => import('./dice/dice.module').then(m => m.DiceModule)
+    },
     { 
         path: 'characters',
         loadChildren: () => import('./characters/characters.module').then(m => m.CharactersModule)
