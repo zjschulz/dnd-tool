@@ -35,13 +35,20 @@ export class DiceComponent implements OnInit {
 
   }
 
-  rollDice(max) {
+  rollDice(max, times) {
+    let result = 0
+    for (let i=0; i < times; i++) {
+      result += this.rollDie(max)
+    }
+    return result
+  }
+
+  rollDie(max) {
     return 1 + Math.floor(Math.random() * max)
   }
 
   onSubmit(){
-    debugger;
-    this.results = this.diceForm.value.d4*this.rollDice(4) + this.diceForm.value.d6*this.rollDice(6) + this.diceForm.value.d8*this.rollDice(8) + this.diceForm.value.d10*this.rollDice(10) + this.diceForm.value.d12*this.rollDice(12) + this.diceForm.value.d20*this.rollDice(20)
+    this.results = this.rollDice(4, this.diceForm.value.d4) + this.rollDice(6, this.diceForm.value.d6) + this.rollDice(8, this.diceForm.value.d8) + this.rollDice(10, this.diceForm.value.d10) + this.rollDice(12, this.diceForm.value.d12) + this.rollDice(20, this.diceForm.value.d20)
     console.log(this.results)
   }
 
