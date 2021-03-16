@@ -23,7 +23,6 @@ export class DiceComponent implements OnInit {
     let rollD10 = 0;
     let rollD12 = 0;
     let rollD20 = 0;
-    let rollD100 = 0;
 
     this.diceForm = new FormGroup({
       'd4': new FormControl(rollD4, Validators.required),
@@ -31,8 +30,7 @@ export class DiceComponent implements OnInit {
       'd8': new FormControl(rollD8, Validators.required),
       'd10': new FormControl(rollD10, Validators.required),
       'd12': new FormControl(rollD12, Validators.required),
-      'd20': new FormControl(rollD20, Validators.required),
-      'd100': new FormControl(rollD100, Validators.required)
+      'd20': new FormControl(rollD20, Validators.required)
     });
 
   }
@@ -43,7 +41,7 @@ export class DiceComponent implements OnInit {
 
   onSubmit(){
     debugger;
-    this.results = this.diceForm.value.d4*this.rollDice(4) + this.diceForm.value.d6*this.rollDice(6) + this.diceForm.value.d8*this.rollDice(8) + this.diceForm.value.d10*this.rollDice(10) + this.diceForm.value.d12*this.rollDice(12) + this.diceForm.value.d20*this.rollDice(20) + this.diceForm.value.d100*this.rollDice(100)
+    this.results = this.diceForm.value.d4*this.rollDice(4) + this.diceForm.value.d6*this.rollDice(6) + this.diceForm.value.d8*this.rollDice(8) + this.diceForm.value.d10*this.rollDice(10) + this.diceForm.value.d12*this.rollDice(12) + this.diceForm.value.d20*this.rollDice(20)
     console.log(this.results)
   }
 
