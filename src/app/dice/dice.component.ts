@@ -10,6 +10,7 @@ export class DiceComponent implements OnInit {
   results: number;
   diceForm: FormGroup;
   rolling = false;
+  stringresults: string
 
   constructor() { }
 
@@ -53,10 +54,21 @@ export class DiceComponent implements OnInit {
     this.rolling = !this.rolling
   }
 
+  evaluateExpression(str) {
+    let total = 0;
+    str = str.match(/[+\−]*(\.\d+|\d+(\.\d+)?)/g) || [];
+    while (str.length) {
+       total += parseFloat(str.shift());
+    };
+    return total;
+  }
+
   onSubmit(){
     var self = this
     this.rollChange();
-    this.results = this.rollDice(4, this.diceForm.value.d4) + this.rollDice(6, this.diceForm.value.d6) + this.rollDice(8, this.diceForm.value.d8) + this.rollDice(10, this.diceForm.value.d10) + this.rollDice(12, this.diceForm.value.d12) + this.rollDice(20, this.diceForm.value.d20)
+    this.stringresults = this.rollDice(4, this.diceForm.value.d4).toString() + " + " + this.rollDice(6, this.diceForm.value.d6) + " + " + this.rollDice(8, this.diceForm.value.d8) + " + " + this.rollDice(10, this.diceForm.value.d10) + " + " + this.rollDice(12, this.diceForm.value.d12) + " + " + this.rollDice(20, this.diceForm.value.d20)
+    this.results = this.evaluateExpression(self.stringresults)
+    // this.results = this.rollDice(4, this.diceForm.value.d4) + this.rollDice(6, this.diceForm.value.d6) + this.rollDice(8, this.diceForm.value.d8) + this.rollDice(10, this.diceForm.value.d10) + this.rollDice(12, this.diceForm.value.d12) + this.rollDice(20, this.diceForm.value.d20)
     setTimeout(function(){ self.rolling = false }, 1000)
   }
 
