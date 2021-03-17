@@ -9,11 +9,13 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 export class DiceComponent implements OnInit {
   results: number;
   diceForm: FormGroup;
+  rolling = false;
 
   constructor() { }
 
   ngOnInit() {
     this.initForm();
+    this.rolling = false;
   }
 
   private initForm() {
@@ -47,9 +49,15 @@ export class DiceComponent implements OnInit {
     return 1 + Math.floor(Math.random() * max)
   }
 
+  rollChange() {
+    this.rolling = !this.rolling
+  }
+
   onSubmit(){
+    var self = this
+    this.rollChange();
     this.results = this.rollDice(4, this.diceForm.value.d4) + this.rollDice(6, this.diceForm.value.d6) + this.rollDice(8, this.diceForm.value.d8) + this.rollDice(10, this.diceForm.value.d10) + this.rollDice(12, this.diceForm.value.d12) + this.rollDice(20, this.diceForm.value.d20)
-    console.log(this.results)
+    setTimeout(function(){ self.rolling = false }, 1000)
   }
 
 }
