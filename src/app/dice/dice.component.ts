@@ -52,6 +52,7 @@ export class DiceComponent implements OnInit {
 
   rollChange() {
     this.rolling = !this.rolling
+    this.playAudio();
   }
 
   evaluateExpression(str) {
@@ -61,6 +62,13 @@ export class DiceComponent implements OnInit {
        total += parseFloat(str.shift());
     };
     return total;
+  }
+
+  playAudio() {
+    let audio = new Audio();
+    audio.src = "../../../assets/sounds/diceroll.mp3";
+    audio.load();
+    audio.play();
   }
 
   onSubmit(){
