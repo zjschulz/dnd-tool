@@ -11,7 +11,6 @@ export class DiceComponent implements OnInit {
   diceForm: FormGroup;
   rolling = false;
   stringresults: string
-  breakdownresults: string;
 
   constructor() { }
 
@@ -92,8 +91,7 @@ export class DiceComponent implements OnInit {
         cheatResults.push(this.rollDiceA(parseInt(dieArray[i].match(/(\d+)/)[0]), this.diceForm.value[dieArray[i]]))
       }
     }
-    this.breakdownresults = cheatResults.join(" + ")
-    this.stringresults = cheatResults.map(x => x.join(" + ")).join(" + ")
+    this.stringresults = cheatResults.map(x => "(" + x.join(" + ") + ")").join(" + ")
     this.results = this.evaluateExpression(self.stringresults)
 
     setTimeout(function(){ self.rolling = false }, 1000);
