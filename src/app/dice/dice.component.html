@@ -52,13 +52,18 @@
             value=0>
         </div>
     </div>
+    <p></p>
     <div class="row">
         <button
         type="submit">Roll</button>
     </div>
+    <p></p>
 </form>
 <div *ngIf="rolling" class="row">
     <img src="https://media1.tenor.com/images/91f3f3ae66c32b2ba435666145a9552f/tenor.gif?itemid=19802269" alt="dice" style="width: 80%; height: 10%; border: 2px solid black;">
+</div>
+<div *ngIf="!rolling" class="row">
+    {{ breakdownresults }}
 </div>
 <div *ngIf="!rolling" class="row">
     {{ stringresults }}
